@@ -1,0 +1,3 @@
+" suptertab
+scriptencoding UTF-8
+let SuperTabDefaultCompletionType='context'   "补全C-n/...

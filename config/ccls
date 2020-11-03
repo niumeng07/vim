@@ -1,0 +1,8 @@
+clang
+%c -std=c++11
+%cpp -std=c++2a
+%h %hpp
+-I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/
+-I/usr/local/include/
+-I.
+-I./include
