@@ -1,2 +1,8 @@
-plugged
-plugged/*
+node_modules/
+package.json
+.netrwhist
+ftplugin
+sessions
+.metals
+.DS_Store
+.vim

@@ -1,129 +1,147 @@
-[submodule "plugged/EasyGrep"]
-	path = plugged/EasyGrep
-	url = https://github.com/vim-scripts/EasyGrep.git
-[submodule "plugged/L9"]
-	path = plugged/L9
-	url = https://github.com/vim-scripts/L9.git
+[submodule "deps/ccls"]
+	path = deps/ccls
+	url = https://github.com/MaskRay/ccls
+	branch = master
+[submodule "autoload/vim-plug"]
+	path = autoload/vim-plug
+	url = https://github.com/junegunn/vim-plug.git
+	branch = master
+[submodule "plugged/DoxygenToolkit.vim"]
+	path = plugged/DoxygenToolkit.vim
+	url = https://github.com/vim-scripts/DoxygenToolkit.vim.git
+	branch = master
 [submodule "plugged/LeaderF"]
 	path = plugged/LeaderF
 	url = https://github.com/Yggdroot/LeaderF.git
-[submodule "plugged/YouCompleteMe"]
-	path = plugged/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
+	branch = master
 [submodule "plugged/a.vim"]
 	path = plugged/a.vim
 	url = https://github.com/vim-scripts/a.vim.git
-[submodule "plugged/ag.vim"]
-	path = plugged/ag.vim
-	url = https://github.com/rking/ag.vim.git
+	branch = master
 [submodule "plugged/asyncrun.vim"]
 	path = plugged/asyncrun.vim
 	url = https://github.com/skywind3000/asyncrun.vim.git
+	branch = master
+[submodule "plugged/coc-neco"]
+	path = plugged/coc-neco
+	url = https://github.com/neoclide/coc-neco.git
+	branch = master
 [submodule "plugged/coc.nvim"]
 	path = plugged/coc.nvim
 	url = https://github.com/neoclide/coc.nvim.git
-[submodule "plugged/dash.vim"]
-	path = plugged/dash.vim
-	url = https://github.com/rizzatti/dash.vim.git
-[submodule "plugged/delimitMate"]
-	path = plugged/delimitMate
-	url = https://github.com/Raimondi/delimitMate.git
-[submodule "plugged/emmet-vim"]
-	path = plugged/emmet-vim
-	url = https://github.com/mattn/emmet-vim.git
-[submodule "plugged/fcitx-vim-osx"]
-	path = plugged/fcitx-vim-osx
-	url = https://github.com/CodeFalling/fcitx-vim-osx.git
+	branch = master
 [submodule "plugged/fzf"]
 	path = plugged/fzf
 	url = https://github.com/junegunn/fzf.git
-[submodule "plugged/fzf.vim"]
-	path = plugged/fzf.vim
-	url = https://github.com/junegunn/fzf.vim.git
+	branch = master
 [submodule "plugged/gocode"]
 	path = plugged/gocode
-	url = https://github.com/nsf/gocode.git
-[submodule "plugged/indentLine"]
-	path = plugged/indentLine
-	url = https://github.com/Yggdroot/indentLine.git
+	url = https://github.com/mdempsky/gocode.git
+	branch = master
+[submodule "plugged/markdown-preview.vim"]
+	path = plugged/markdown-preview.vim
+	url = https://github.com/iamcco/markdown-preview.vim.git
+	branch = master
+[submodule "plugged/mathjax-support-for-mkdp"]
+	path = plugged/mathjax-support-for-mkdp
+	url = https://github.com/iamcco/mathjax-support-for-mkdp.git
+	branch = master
 [submodule "plugged/nerdcommenter"]
 	path = plugged/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "plugged/nerdtree"]
-	path = plugged/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "plugged/powerline"]
-	path = plugged/powerline
-	url = https://github.com/powerline/powerline.git
-[submodule "plugged/quickmenu.vim"]
-	path = plugged/quickmenu.vim
-	url = https://github.com/skywind3000/quickmenu.vim.git
+	branch = master
 [submodule "plugged/supertab"]
 	path = plugged/supertab
 	url = https://github.com/ervandew/supertab.git
-[submodule "plugged/syntastic"]
-	path = plugged/syntastic
-	url = https://github.com/scrooloose/syntastic.git
+	branch = master
+[submodule "plugged/tabnine-vim"]
+	path = plugged/tabnine-vim
+	url = https://github.com/zxqfl/tabnine-vim.git
+	branch = master
 [submodule "plugged/tabular"]
 	path = plugged/tabular
 	url = https://github.com/godlygeek/tabular.git
-[submodule "plugged/tagbar"]
-	path = plugged/tagbar
-	url = https://github.com/majutsushi/tagbar.git
-[submodule "plugged/ultisnips"]
-	path = plugged/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
+	branch = master
+[submodule "plugged/vim-airline"]
+	path = plugged/vim-airline
+	url = https://github.com/vim-airline/vim-airline.git
+	branch = master
+[submodule "plugged/vim-airline-themes"]
+	path = plugged/vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes.git
+	branch = master
 [submodule "plugged/vim-codefmt"]
 	path = plugged/vim-codefmt
 	url = https://github.com/google/vim-codefmt.git
+	branch = master
 [submodule "plugged/vim-colorschemes"]
 	path = plugged/vim-colorschemes
-	url = https://github.com/niumeng07/vim-colorschemes.git
+    url = git@github.com:niumeng07/vim-colorschemes.git
+	branch = master
 [submodule "plugged/vim-easymotion"]
 	path = plugged/vim-easymotion
 	url = https://github.com/Lokaltog/vim-easymotion.git
+	branch = master
 [submodule "plugged/vim-fugitive"]
 	path = plugged/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+	branch = master
 [submodule "plugged/vim-glaive"]
 	path = plugged/vim-glaive
 	url = https://github.com/google/vim-glaive.git
+	branch = master
 [submodule "plugged/vim-go"]
 	path = plugged/vim-go
 	url = https://github.com/fatih/vim-go.git
-[submodule "plugged/vim-javacomplete2"]
-	path = plugged/vim-javacomplete2
-	url = https://github.com/artur-shaik/vim-javacomplete2.git
-[submodule "plugged/vim-leader-guide"]
-	path = plugged/vim-leader-guide
-	url = https://github.com/hecal3/vim-leader-guide.git
+	branch = master
 [submodule "plugged/vim-maktaba"]
 	path = plugged/vim-maktaba
 	url = https://github.com/google/vim-maktaba.git
+	branch = master
 [submodule "plugged/vim-markdown"]
 	path = plugged/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
+	branch = master
 [submodule "plugged/vim-polyglot"]
 	path = plugged/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot.git
+	branch = master
 [submodule "plugged/vim-scala"]
 	path = plugged/vim-scala
 	url = https://github.com/derekwyatt/vim-scala.git
-[submodule "plugged/vim-signify"]
-	path = plugged/vim-signify
-	url = https://github.com/mhinz/vim-signify.git
+	branch = master
+[submodule "plugged/vim-smooth-scroll"]
+	path = plugged/vim-smooth-scroll
+	url = https://github.com/terryma/vim-smooth-scroll.git
+	branch = master
 [submodule "plugged/vim-snippets"]
 	path = plugged/vim-snippets
-	url = https://github.com/honza/vim-snippets.git
+    url = git@github.com:niumeng07/vim-snippets.git
+	branch = master
 [submodule "plugged/vim-visual-multi"]
 	path = plugged/vim-visual-multi
 	url = https://github.com/mg979/vim-visual-multi.git
+	branch = master
 [submodule "plugged/vim-which-key"]
 	path = plugged/vim-which-key
 	url = https://github.com/liuchengxu/vim-which-key.git
-[submodule "plugged/vista.vim"]
-	path = plugged/vista.vim
-	url = https://github.com/liuchengxu/vista.vim.git
-[submodule "plugged/vundle"]
-	path = plugged/vundle
-	url = https://github.com/gmarik/vundle.git
+	branch = master
+[submodule "plugged/vim-choosewin"]
+	path = plugged/vim-choosewin
+	url = https://github.com/t9md/vim-choosewin.git
+	branch = master
+[submodule "plugged/vim-floaterm"]
+	path = plugged/vim-floaterm
+	url = https://github.com/voldikss/vim-floaterm.git
+	branch = master
+[submodule "plugged/neco-vim"]
+	path = plugged/neco-vim
+	url = https://github.com/Shougo/neco-vim.git
+	branch = master
+[submodule "deps/bear"]
+	path = deps/bear
+	url = https://github.com/rizsotto/Bear.git
+	branch = master
+[submodule "plugged/auto-pairs"]
+	path = plugged/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git
