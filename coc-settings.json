@@ -13,7 +13,6 @@
     "diagnostic.infoSign": "",
     "diagnostic.maxWindowHeight": 10,
     "diagnostic.refreshOnInsertMode": true,
-    "diagnostic.signOffset": 9999,
     "diagnostic.warningSign": "",
 
     "tabnine.shortcut": "TN",
@@ -63,12 +62,9 @@
     "prettier.tabWidth": 4,
     "prettier.printWidth": 200,
 
-    // coc-python
-    "python.analysis.openFilesOnly": true,
-    "python.autoComplete.addBrackets": true,
-    "python.jediEnabled": false,
-    "python.trace.server": "verbose",
-    "python.linting.pylintEnabled": true,
+    // coc-pyright
+    "python.linting.pylintEnabled": false,
+    "python.pythonPath": "/usr/local/bin/python3",
 
     "session.directory": "~/.cache/coc/sessions",
     "session.saveOnVimLeave": true,
@@ -139,34 +135,6 @@
             "args": ["up", "--method", "stdio"],
             "filetypes": ["sql", "mysql"]
         },
-        "python": {
-            "command": "python",
-            "args": ["-mpyls", "-vv", "--log-file", "/tmp/lsp_python.log"],
-            "trace.server": "verbose",
-            "filetypes": ["python"],
-            "settings": {
-                "pyls.enable": true,
-                "pyls.trace.server": "verbose",
-                "pyls.commandPath": "",
-                "pyls.configurationSources": ["pycodestyle"],
-                "pyls.plugins.jedi_completion.enabled": true,
-                "pyls.plugins.jedi_hover.enabled": true,
-                "pyls.plugins.jedi_references.enabled": true,
-                "pyls.plugins.jedi_signature_help.enabled": true,
-                "pyls.plugins.jedi_symbols.enabled": true,
-                "pyls.plugins.jedi_symbols.all_scopes": true,
-                "pyls.plugins.mccabe.enabled": true,
-                "pyls.plugins.mccabe.threshold": 15,
-                "pyls.plugins.preload.enabled": true,
-                "pyls.plugins.pycodestyle.enabled": true,
-                "pyls.plugins.pydocstyle.enabled": false,
-                "pyls.plugins.pydocstyle.match": "(?!test_).*\\.py",
-                "pyls.plugins.pydocstyle.matchDir": "[^\\.].*",
-                "pyls.plugins.pyflakes.enabled": false,
-                "pyls.plugins.rope_completion.enabled": true,
-                "pyls.plugins.yapf.enabled": true
-            }
-        },
         "cmake": {
             "command": "cmake-language-server",
             "filetypes": ["cmake"],
@@ -179,6 +147,15 @@
             "command": "docker-langserver",
             "filetypes": ["dockerfile"],
             "args": ["--stdio"]
-        }
+        },
+        "lua": {
+            "command": "lua-lsp",
+            "filetypes": ["lua"]
+        },
+        "phplang": {
+            "command": "php",
+            "args": ["/path/to/vendor/felixfbecker/language-server/bin/php-language-server.php"],
+            "filetypes": ["php"]
+         }
     }
 }

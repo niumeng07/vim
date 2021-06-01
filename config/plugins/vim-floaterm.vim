@@ -1,5 +1,9 @@
 let floaterm_position='bottomright'
-let floaterm_wintype='floating'
+if has('nvim')
+    let floaterm_wintype='floating'
+else
+    let floaterm_wintype='popup'
+endif
 
 if has('mac')
     let g:floaterm_shell='zsh'

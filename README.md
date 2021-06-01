@@ -8,20 +8,14 @@ Most used languages: C/C++, Golang, Python2/Python3, Java/Scala, Shell, Lua, Rus
 - [google/vim-codefmt](https://github.com/google/vim-codefmt) codefmt is a utility for syntax-aware code formatting(Support: Bazel,c,cc,Dart,css,go,java,python...) 
 - [niumeng07/vim-colorschemes](https://github.com/niumeng07/vim-colorschemes) 
 - [Lokaltog/vim-easymotion](https://github.com/Lokaltog/vim-easymotion) 
-- [Yggdroot/indentLine](https://github.com/Yggdroot/indentLine) 
 - [godlygeek/tabular](https://github.com/godlygeek/tabular) align tool, must come before plasticboy/vim-markdown 
-- [plasticboy/vim-markdown](https://github.com/plasticboy/vim-markdown) 
-- [iamcco/mathjax-support-for-mkdp](https://github.com/iamcco/mathjax-support-for-mkdp) MathJax support for markdown-preview.vim 
-- [iamcco/markdown-preview.vim](https://github.com/iamcco/markdown-preview.vim) 
 - [fatih/vim-go](https://github.com/fatih/vim-go) 
 - [nsf/gocode](https://github.com/nsf/gocode) 
 - [derekwyatt/vim-scala](https://github.com/derekwyatt/vim-scala) 
 - [niumeng07/vim-snippets](https://github.com/niumeng07/vim-snippets) 
 - [junegunn/fzf](https://github.com/junegunn/fzf) 
 - [Yggdroot/LeaderF](https://github.com/Yggdroot/LeaderF) 
-- [skywind3000/asyncrun.vim](https://github.com/skywind3000/asyncrun.vim) 
 - [liuchengxu/vim-which-key](https://github.com/liuchengxu/vim-which-key) 
-- [skywind3000/quickmenu.vim](https://github.com/skywind3000/quickmenu.vim) 
 - [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim) 
 - [Shougo/neco-vim](https://github.com/Shougo/neco-vim) neco-vim is the framework for coc.nvim 
 - [neoclide/coc-neco](https://github.com/neoclide/coc-neco) vim completion source for coc.nvim 
@@ -31,44 +25,11 @@ Most used languages: C/C++, Golang, Python2/Python3, Java/Scala, Shell, Lua, Rus
 - [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive) Git command tool 
 - [vim-scripts/DoxygenToolkit.vim](https://github.com/vim-scripts/DoxygenToolkit.vim) 
 - [voldikss/vim-floaterm.git](https://github.com/voldikss/vim-floaterm.git) 
-- [t9md/vim-choosewin](https://github.com/t9md/vim-choosewin.git) 
-- [liuchengxu/vista.vim](https://github.com/liuchengxu/vista.vim) 
 - [vim-scripts/a.vim](https://github.com/vim-scripts/a.vim) 
-- [rizzatti/dash.vim](https://github.com/rizzatti/dash.vim) 
-- [scrooloose/nerdcommenter](https://github.com/scrooloose/nerdcommenter) 
 - [ervandew/supertab](https://github.com/ervandew/supertab) All complete in <TAB> 
 - [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline) 
 - [vim-airline/vim-airline-themes](https://github.com/vim-airline/vim-airline-themes) 
 - [zxqfl/tabnine-vim](https://github.com/zxqfl/tabnine-vim) Use too much CPU. Use coc-tabnine and language-server instead.
- 
-### Plugins deprecated 
-- [gmarik/vundle](https://github.com/gmarik/vundle) Use plugin instead. 
-- [vim-scripts/L9](https://github.com/vim-scripts/L9) Vim-script library, Use vim-maktaba instead. 
-- [majutsushi/tagbar](https://github.com/majutsushi/tagbar) Use vista instead. 
-- [Valloric/YouCompleteMe](https://github.com/Valloric/YouCompleteMe) Use coc-language-server/tabnine instead. 
-- [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree) Use coc-explorer instead. 
-- [Shougo/defx.nvim](https://github.com/Shougo/defx.nvim) Use coc-explorer instead. 
-- [kristijanhusak/defx-icons](https://github.com/kristijanhusak/defx-icons) 
-- [roxma/nvim-yarp](https://github.com/roxma/nvim-yarp) 
-- [roxma/vim-hug-neovim-rpc](https://github.com/roxma/vim-hug-neovim-rpc) 
-- [mattn/emmet-vim](https://github.com/mattn/emmet-vim) Use coc-emmet instead. 
-- [artur-shaik/vim-javacomplete2](https://github.com/artur-shaik/vim-javacomplete2) Use coc-metals instead. 
-- [SirVer/ultisnips](https://github.com/SirVer/ultisnips) 
-- [CodeFalling/fcitx-vim-osx](https://github.com/CodeFalling/fcitx-vim-osx) 
-- [hecal3/vim-leader-guide](https://github.com/hecal3/vim-leader-guide) 
-- [mhinz/vim-signify](https://github.com/mhinz/vim-signify) 
-- [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter) Use vim-fugitive instead. 
-- [gregsexton/gitv](https://github.com/gregsexton/gitv) Use vim-fugitive instead. 
-- [python-mode/python-mode](https://github.com/python-mode/python-mode) 
-- [terryma/vim-expand-region](https://github.com/terryma/vim-expand-region) 
-- [tell-k/vim-autopep8](https://github.com/tell-k/vim-autopep8) Use coc-format/code-formatter instead 
-- [liuchengxu/vim-clap](https://github.com/liuchengxu/vim-clap) Use Leaderf + rg + git-fugitive instead 
-- [rking/ag.vim](https://github.com/rking/ag.vim) Use rg instead 
-- [Shougo/neoinclude.vim](https://github.com/Shougo/neoinclude.vim) neoinclude is the framework for neocomplete/deoplete/ncm 
-- [jsfaint/coc-neoinclude](https://github.com/jsfaint/coc-neoinclude) neoinclude completion source for coc.nvim 
-- [Raimondi/delimitMate](https://github.com/Raimondi/delimitMate) Use coc-pairs instead 
-- [tpope/vim-dispatch](https://github.com/tpope/vim-dispatch) Use asyncrun instead 
-- [dense-analysis/ale](https://github.com/dense-analysis/ale) Asynchronous Lint Engine, Use coc-language-server instead 
  
 ### Install 
 Install with vim-plug. 
@@ -82,12 +43,6 @@ wget https://github.com/google/google-java-format/releases/download/google-java-
 1. go support 
 ```sh
 vim +GoInstallBinaries
-echo "export GOPATH=$GOPATH:~/.vim/plugged/vim-go/binary" >> ~/.bash_profile
-echo "export GOROOT=\"/usr/local/opt/go/libexec\"" >> ~/.bash_profile
-echo "export PATH=\"$GOROOT/bin/:$PATH\"" >> ~/.bash_profile
-go get -u github.com/sourcegraph/go-langserver
-go get -u github.com/mdempsky/gocode # don't use nsf/gocode
-echo "export PATH=$PATH:~/.vim/plugged/vim-go/binary/bin" >> ~/.bash_profile
 npm i -g neovim
 ```
  
@@ -100,7 +55,8 @@ brew install the_silver_searcher
  
 3. deps of coc. 
 ```sh
-curl -sL install-node.now.sh/lts | sh
+# curl -sL install-node.now.sh/lts | sh
+brew install node
 ```
 yarn is necessary if install coc from source. 
 ```sh
@@ -138,42 +94,19 @@ vim -c "CocInstall coc-pyright"
 ```
 
 5. C++ support 
-```sh
-brew install ccls
-sudo pip3 install --no-binary :all: pynvim --force
-cd ~/.config/coc/extensions/node_modules/coc-ccls
-ln -s node_modules/ws/lib lib
-```
 build ccls from source. 
 ```sh
 git clone https://github.com/MaskRay/ccls --recursive
 cd ccls
-wget -c https://releases.llvm.org/9.0.0/clang+llvm-9.0.0-x86_64-linux-sles11.3.tar.xz
-tar xf clang+llvm-9.0.0-x86_64-linux-sles11.3.tar.xz
-cd clang+llvm-9.0.0-x86_64-linux-sles11.3d
-cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=$PWD/clang+llvm-9.0.0-x86_64-linux-sles11.3
+brew info llvm
+cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/usr/local/Cellar/llvm/<Your Version>/lib/cmake
 cmake --build Release
 cd Release
 make -j
 sudo make install
 ```
  
-6. Scala support 
-```sh
-cd ~/.vim/
-curl -L -o deps/coursier/coursier https://git.io/coursier
-chmod +x deps/coursier/coursier
-./deps/coursier/coursier bootstrap \
- --java-opt -Xss4m \
- --java-opt -Xms100m \
- --java-opt -Dmetals.client=coc.nvim \
- org.scalameta:metals_2.12:0.7.6 \
- -r bintray:scalacenter/releases \
- -r sonatype:snapshots \
- -o /usr/local/bin/metals-vim -f
-```
- 
-7. ctags is neccessary for Vista 
+6. ctags is neccessary for Vista 
 install ctags from brew 
 ```sh
 brew install --HEAD --with-jansson universal-ctags/universal-ctags/universal-ctags
@@ -188,7 +121,7 @@ make
 sudo make install
 ```
 
-8. floaterm for neovim 
+7. floaterm for neovim 
 ```sh
 sudo pip3 install neovim-remote
 ```
@@ -205,4 +138,42 @@ sudo pip3 install 'python-language-server[all]'
 sudo pip install vim-vint
 sudo pip3 install vim-vint
 ```
- 
+
+### Plugins deprecated 
+- [Yggdroot/indentLine](https://github.com/Yggdroot/indentLine) 
+- [iamcco/markdown-preview.vim](https://github.com/iamcco/markdown-preview.vim) 
+- [plasticboy/vim-markdown](https://github.com/plasticboy/vim-markdown) 
+- [iamcco/mathjax-support-for-mkdp](https://github.com/iamcco/mathjax-support-for-mkdp) MathJax support for markdown-preview.vim 
+- [skywind3000/asyncrun.vim](https://github.com/skywind3000/asyncrun.vim) 
+- [skywind3000/quickmenu.vim](https://github.com/skywind3000/quickmenu.vim) 
+- [t9md/vim-choosewin](https://github.com/t9md/vim-choosewin.git) 
+- [liuchengxu/vista.vim](https://github.com/liuchengxu/vista.vim) 
+- [rizzatti/dash.vim](https://github.com/rizzatti/dash.vim) 
+- [scrooloose/nerdcommenter](https://github.com/scrooloose/nerdcommenter) 
+- [gmarik/vundle](https://github.com/gmarik/vundle) Use plugin instead. 
+- [vim-scripts/L9](https://github.com/vim-scripts/L9) Vim-script library, Use vim-maktaba instead. 
+- [majutsushi/tagbar](https://github.com/majutsushi/tagbar) Use vista instead. 
+- [Valloric/YouCompleteMe](https://github.com/Valloric/YouCompleteMe) Use coc-language-server/tabnine instead. 
+- [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree) Use coc-explorer instead. 
+- [Shougo/defx.nvim](https://github.com/Shougo/defx.nvim) Use coc-explorer instead. 
+- [kristijanhusak/defx-icons](https://github.com/kristijanhusak/defx-icons) 
+- [roxma/nvim-yarp](https://github.com/roxma/nvim-yarp) 
+- [roxma/vim-hug-neovim-rpc](https://github.com/roxma/vim-hug-neovim-rpc) 
+- [mattn/emmet-vim](https://github.com/mattn/emmet-vim) Use coc-emmet instead. 
+- [artur-shaik/vim-javacomplete2](https://github.com/artur-shaik/vim-javacomplete2) Use coc-metals instead. 
+- [SirVer/ultisnips](https://github.com/SirVer/ultisnips) 
+- [CodeFalling/fcitx-vim-osx](https://github.com/CodeFalling/fcitx-vim-osx) 
+- [hecal3/vim-leader-guide](https://github.com/hecal3/vim-leader-guide) 
+- [mhinz/vim-signify](https://github.com/mhinz/vim-signify) 
+- [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter) Use vim-fugitive instead. 
+- [gregsexton/gitv](https://github.com/gregsexton/gitv) Use vim-fugitive instead. 
+- [python-mode/python-mode](https://github.com/python-mode/python-mode) 
+- [terryma/vim-expand-region](https://github.com/terryma/vim-expand-region) 
+- [tell-k/vim-autopep8](https://github.com/tell-k/vim-autopep8) Use coc-format/code-formatter instead 
+- [liuchengxu/vim-clap](https://github.com/liuchengxu/vim-clap) Use Leaderf + rg + git-fugitive instead 
+- [rking/ag.vim](https://github.com/rking/ag.vim) Use rg instead 
+- [Shougo/neoinclude.vim](https://github.com/Shougo/neoinclude.vim) neoinclude is the framework for neocomplete/deoplete/ncm 
+- [jsfaint/coc-neoinclude](https://github.com/jsfaint/coc-neoinclude) neoinclude completion source for coc.nvim 
+- [Raimondi/delimitMate](https://github.com/Raimondi/delimitMate) Use coc-pairs instead 
+- [tpope/vim-dispatch](https://github.com/tpope/vim-dispatch) Use asyncrun instead 
+- [dense-analysis/ale](https://github.com/dense-analysis/ale) Asynchronous Lint Engine, Use coc-language-server instead 
