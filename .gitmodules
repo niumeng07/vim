@@ -142,3 +142,6 @@
 	path = deps/bear
 	url = https://github.com/rizsotto/Bear.git
 	branch = master
+[submodule "plugged/auto-pairs"]
+	path = plugged/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git
