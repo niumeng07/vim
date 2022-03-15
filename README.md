@@ -10,7 +10,6 @@ Most used languages: C/C++, Golang, Python2/Python3, Java/Scala, Shell, Lua, Rus
 - [Lokaltog/vim-easymotion](https://github.com/Lokaltog/vim-easymotion) 
 - [godlygeek/tabular](https://github.com/godlygeek/tabular) align tool, must come before plasticboy/vim-markdown 
 - [fatih/vim-go](https://github.com/fatih/vim-go) 
-- [nsf/gocode](https://github.com/nsf/gocode) 
 - [derekwyatt/vim-scala](https://github.com/derekwyatt/vim-scala) 
 - [niumeng07/vim-snippets](https://github.com/niumeng07/vim-snippets) 
 - [junegunn/fzf](https://github.com/junegunn/fzf) 
@@ -148,6 +147,12 @@ sudo pip install vim-vint
 sudo pip3 install vim-vint
 ```
 
+10. font
+```sh
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
+```
+
 ### Plugins deprecated 
 - [Yggdroot/indentLine](https://github.com/Yggdroot/indentLine) 
 - [iamcco/markdown-preview.vim](https://github.com/iamcco/markdown-preview.vim) 
@@ -186,3 +191,4 @@ sudo pip3 install vim-vint
 - [Raimondi/delimitMate](https://github.com/Raimondi/delimitMate) Use coc-pairs instead 
 - [tpope/vim-dispatch](https://github.com/tpope/vim-dispatch) Use asyncrun instead 
 - [dense-analysis/ale](https://github.com/dense-analysis/ale) Asynchronous Lint Engine, Use coc-language-server instead 
+- [nsf/gocode](https://github.com/nsf/gocode)  suggest you use the Go language server, gopls.

@@ -7,7 +7,6 @@ function! LoadPlugin(ConfigFlag)
     Plug 'Lokaltog/vim-easymotion'
     Plug 'godlygeek/tabular'  " use for alignment
     Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries', 'for': 'go'}
-    Plug 'mdempsky/gocode', {'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh', 'for': 'go'}
     Plug 'derekwyatt/vim-scala', {'for': 'scala'}
     Plug 'niumeng07/vim-snippets'
     Plug 'junegunn/fzf', {'dir': '~/.vim/plugged/fzf', 'do': './install --all'}

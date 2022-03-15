@@ -3,7 +3,7 @@
     "coc.preferences.extensionUpdateCheck": "daily",
     "coc.preferences.formatOnSaveFiletypes": ["javascript", "python"], //, "java", "scala", "c", "h", "hh", "hpp", "cc", "cu", "cpp", json
     "coc.preferences.highlightTimeout": 1000,
-    "coc.preferences.rootPatterns": [".git", ".vim", ".projections.json", ".project"],
+    "coc.preferences.rootPatterns": [".git", ".vim", ".projections.json", ".project", "build.sbt", "build.sc", "build.grade", "pom.xml"],
     "coc.preferences.formatOnType": true,
     "cursors.cancelKey": "<BackSpace>",
 
@@ -92,8 +92,8 @@
     "suggest.triggerCompletionWait": 50,
 
     "metals.enable": true,
-    "xml.java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_281.jdk/Contents/Home",
-    "metals.javaHome": "/Library/Java/JavaVirtualMachines/jdk1.8.0_281.jdk/Contents/Home",
+    "xml.java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/",
+    "metals.javaHome": "/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home",
     "metals.mavenScript": "mvn ch.epfl.scala:maven-bloop_2.10:<bloop_version>:bloopInstall",
 
     "yank.enableCompletion": false,
