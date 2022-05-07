@@ -1,7 +1,7 @@
 {
     "coc.preferences.colorSupport": true,
     "coc.preferences.extensionUpdateCheck": "daily",
-    "coc.preferences.formatOnSaveFiletypes": ["javascript", "python", "java", "scala"], //, "c", "h", "hh", "hpp", "cc", "cu", "cpp", json
+    "coc.preferences.formatOnSaveFiletypes": ["javascript", "python"], //, "java", "scala", "c", "h", "hh", "hpp", "cc", "cu", "cpp", json
     "coc.preferences.highlightTimeout": 1000,
     "coc.preferences.rootPatterns": [".git", ".vim", ".projections.json", ".project"],
     "coc.preferences.formatOnType": true,

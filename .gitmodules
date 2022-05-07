@@ -1,5 +1,5 @@
-[submodule "deps/ccls"]
-	path = deps/ccls
+[submodule "third_party/ccls"]
+	path = third_party/ccls
 	url = https://github.com/MaskRay/ccls
 	branch = master
 [submodule "autoload/vim-plug"]
@@ -37,18 +37,6 @@
 [submodule "plugged/gocode"]
 	path = plugged/gocode
 	url = https://github.com/mdempsky/gocode.git
-	branch = master
-[submodule "plugged/markdown-preview.vim"]
-	path = plugged/markdown-preview.vim
-	url = https://github.com/iamcco/markdown-preview.vim.git
-	branch = master
-[submodule "plugged/mathjax-support-for-mkdp"]
-	path = plugged/mathjax-support-for-mkdp
-	url = https://github.com/iamcco/mathjax-support-for-mkdp.git
-	branch = master
-[submodule "plugged/nerdcommenter"]
-	path = plugged/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
 	branch = master
 [submodule "plugged/supertab"]
 	path = plugged/supertab
@@ -98,10 +86,6 @@
 	path = plugged/vim-maktaba
 	url = https://github.com/google/vim-maktaba.git
 	branch = master
-[submodule "plugged/vim-markdown"]
-	path = plugged/vim-markdown
-	url = https://github.com/plasticboy/vim-markdown.git
-	branch = master
 [submodule "plugged/vim-polyglot"]
 	path = plugged/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot.git
@@ -116,7 +100,7 @@
 	branch = master
 [submodule "plugged/vim-snippets"]
 	path = plugged/vim-snippets
-    url = git@github.com:niumeng07/vim-snippets.git
+	url = git@github.com:niumeng07/vim-snippets.git
 	branch = master
 [submodule "plugged/vim-visual-multi"]
 	path = plugged/vim-visual-multi
@@ -126,10 +110,6 @@
 	path = plugged/vim-which-key
 	url = https://github.com/liuchengxu/vim-which-key.git
 	branch = master
-[submodule "plugged/vim-choosewin"]
-	path = plugged/vim-choosewin
-	url = https://github.com/t9md/vim-choosewin.git
-	branch = master
 [submodule "plugged/vim-floaterm"]
 	path = plugged/vim-floaterm
 	url = https://github.com/voldikss/vim-floaterm.git
@@ -138,10 +118,13 @@
 	path = plugged/neco-vim
 	url = https://github.com/Shougo/neco-vim.git
 	branch = master
-[submodule "deps/bear"]
-	path = deps/bear
+[submodule "third_party/bear"]
+	path = third_party/bear
 	url = https://github.com/rizsotto/Bear.git
 	branch = master
 [submodule "plugged/auto-pairs"]
 	path = plugged/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
+[submodule "plugged/copilot.vim"]
+	path = plugged/copilot.vim
+	url = https://github.com/github/copilot.vim.git

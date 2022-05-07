@@ -7,7 +7,7 @@ function! LoadPlugin(ConfigFlag)
     Plug 'Lokaltog/vim-easymotion'
     Plug 'godlygeek/tabular'  " use for alignment
     Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries', 'for': 'go'}
-    Plug 'mdempsky/gocode', {'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh', 'for': 'go'}
+    Plug 'mdempsky/gocode', {'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh', 'for': 'go'}
     Plug 'derekwyatt/vim-scala', {'for': 'scala'}
     Plug 'niumeng07/vim-snippets'
     Plug 'junegunn/fzf', {'dir': '~/.vim/plugged/fzf', 'do': './install --all'}
@@ -21,13 +21,14 @@ function! LoadPlugin(ConfigFlag)
     Plug 'terryma/vim-smooth-scroll'
     Plug 'tpope/vim-fugitive'
     Plug 'voldikss/vim-floaterm'
-    Plug 'vim-scripts/a.vim'
+    Plug 'vim-scripts/a.vim', {'for': 'c,cc,cpp,h,hh,hpp'}
     Plug 'ervandew/supertab'  " perform all insert cpmpletion using the tab key.
     Plug 'jiangmiao/auto-pairs'  " substitute for coc-pairs
+    Plug 'github/copilot.vim'  " Open AIpair programmer
     if a:ConfigFlag ==# 'normal'
         Plug 'vim-airline/vim-airline'
         Plug 'vim-airline/vim-airline-themes'
-        Plug 'zxqfl/tabnine-vim'
+        Plug 'codota/tabnine-vim', {'branch': 'python3'}
     endif
     Plug 'vim-scripts/DoxygenToolkit.vim'
     call plug#end()

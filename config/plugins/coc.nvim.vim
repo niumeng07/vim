@@ -35,7 +35,7 @@ endfunction
 nnoremap <silent> <leader>k :call <SID>show_documentation()<CR>
 
 function! s:CocExplorer()
-    CocCommand explorer --width=30 --toggle --quit-on-open --content-width-type vim-width
+    CocCommand explorer --width=30 --toggle --content-width-type vim-width
     " CocCommand explorer --width=30 --toggle --quit-on-open --content-width-type win-width
 endfunction
 

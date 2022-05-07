@@ -80,7 +80,7 @@ elseif has('nvim')
     let python3_host_prog='/usr/local/bin/python3'
     " let ruby_host_prog='/usr/local/lib/ruby/gems/2.6.0/bin/neovim-ruby-host'
     let ruby_host_prog = exepath('neovim-ruby-host')
-    let node_host_prog='/usr/local/bin/node'
+    " let node_host_prog='/usr/local/bin/node'
     set listchars=
 endif
 
@@ -112,8 +112,11 @@ else
     set autoindent
 endif
 
-if has('patch-8.1.1564')
-    set signcolumn=number " Recently vim can merge signcolumn and number column into one
-else
-    set signcolumn=yes
-endif
+set signcolumn=yes
+
+" 滚动设置
+set mouse=a
+map <ScrollWheelUp> <C-Y>
+map <S-ScrollWheelUp> <C-U>
+map <ScrollWheelDown> <C-E>
+map <S-ScrollWheelDown> <C-D>

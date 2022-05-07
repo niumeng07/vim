@@ -29,14 +29,14 @@ Most used languages: C/C++, Golang, Python2/Python3, Java/Scala, Shell, Lua, Rus
 - [ervandew/supertab](https://github.com/ervandew/supertab) All complete in <TAB> 
 - [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline) 
 - [vim-airline/vim-airline-themes](https://github.com/vim-airline/vim-airline-themes) 
-- [zxqfl/tabnine-vim](https://github.com/zxqfl/tabnine-vim) Use too much CPU. Use coc-tabnine and language-server instead.
+- [codota/tabnine-vim](https://github.com/codota/tabnine-vim)
  
 ### Install 
 Install with vim-plug. 
 ```sh 
 cd ~ && /bin/rm -rf .vim && git clone https://github.com/niumeng07/vim.git .vim --recursive
 vim +PlugInstall 
-wget https://github.com/google/google-java-format/releases/download/google-java-format-1.9/google-java-format-1.9-all-deps.jar ~/.vim/deps/format
+wget https://github.com/google/google-java-format/releases/download/google-java-format-1.9/google-java-format-1.9-all-third_party.jar ~/.vim/third_party/format
 ``` 
  
 ### third-party 
@@ -53,15 +53,15 @@ brew install the_silver_searcher
 # For CentOS, yum install the_silver_searcher
 ```
  
-3. deps of coc. 
+3. third_party of coc. 
 ```sh
 # curl -sL install-node.now.sh/lts | sh
 brew install node
 ```
 yarn is necessary if install coc from source. 
 ```sh
-alias vim="PATH=$HOME/.vim/deps/yarn/bin:$PATH vim"
-$HOME/.vim/deps/yarn/bin/yarn add coc-json coc-snippets
+alias vim="PATH=$HOME/.vim/third_party/yarn/bin:$PATH vim"
+$HOME/.vim/third_party/yarn/bin/yarn add coc-json coc-snippets
 ```
 If coc can't find package.json, delete ~/.config/coc/extensions/node_modules/* and reinstall coc-plugins.
 ```sh
@@ -99,7 +99,7 @@ coc-java cashe:
 
 Try build coc if errors found following coc updates.
 ```sh
-cd ~/.vim/plugged/coc.nvim && $HOME/.vim/deps/yarn/bin/yarn install --frozen-lockfile && cd -
+cd ~/.vim/plugged/coc.nvim && $HOME/.vim/third_party/yarn/bin/yarn install --frozen-lockfile && cd -
 ```
 Or config in plugin configs. 
 ```vim
