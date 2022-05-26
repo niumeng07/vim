@@ -91,9 +91,9 @@
     "suggest.triggerAfterInsertEnter": true,
     "suggest.triggerCompletionWait": 50,
 
-    "metals.enable": false,
-    "xml.java.home": "$JAVA_HOME",
-    "metals.javaHome": "$JAVA_HOME",
+    "metals.enable": true,
+    "xml.java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_281.jdk/Contents/Home",
+    "metals.javaHome": "/Library/Java/JavaVirtualMachines/jdk1.8.0_281.jdk/Contents/Home",
     "metals.mavenScript": "mvn ch.epfl.scala:maven-bloop_2.10:<bloop_version>:bloopInstall",
 
     "yank.enableCompletion": false,
@@ -110,12 +110,11 @@
             }
         },
         "golang": {
-            "command": "go-langserver",
+            "command": "gopls",
+            "rootPatterns": ["go.work", "go.mod", ".vim/", ".git/", ".hg/"],
             "filetypes": ["go"],
             "initializationOptions": {
-                "diagnosticsEnabled": true,
-                "gocodeCompletionEnabled": true,
-                "lintTool": "golint"
+                "usePlaceholders": true
             }
         },
         "metals": {
