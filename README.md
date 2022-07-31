@@ -125,19 +125,9 @@ make -j
 sudo make install
 ```
  
-6. ctags is neccessary for Vista 
-install ctags from brew 
+6. hack nerd font
 ```sh
-brew install --HEAD --with-jansson universal-ctags/universal-ctags/universal-ctags
-```
-or build from source 
-```sh
-git clone https://github.com/universal-ctags/ctags.git
-cd ctags
-./autogen.sh
-./configure
-make
-sudo make install
+brew install homebrew/cask-fonts/font-hackgen-nerd --cask
 ```
 
 7. floaterm for neovim 
