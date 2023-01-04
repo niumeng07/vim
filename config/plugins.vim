@@ -14,7 +14,7 @@ function! LoadPlugin(ConfigFlag)
     Plug 'liuchengxu/vim-which-key', {'on': ['WhichKey', 'WhichKey!']}
     Plug 'Shougo/neco-vim'
     Plug 'neoclide/coc-neco'  " competion source for coc.nvim, depend on neco-vim
-    Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': '~/.vim/third_party/yarn/bin/yarn install --frozen-lockfile'}
     Plug 'sheerun/vim-polyglot'  " language pack for vim
     Plug 'mg979/vim-visual-multi'
     Plug 'terryma/vim-smooth-scroll'

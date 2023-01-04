@@ -44,7 +44,7 @@
 	branch = master
 [submodule "plugged/tabnine-vim"]
 	path = plugged/tabnine-vim
-	url = https://github.com/zxqfl/tabnine-vim.git
+	url = https://github.com/codota/tabnine-vim.git
 	branch = master
 [submodule "plugged/tabular"]
 	path = plugged/tabular

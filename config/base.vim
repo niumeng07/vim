@@ -120,3 +120,21 @@ map <ScrollWheelUp> <C-Y>
 map <S-ScrollWheelUp> <C-U>
 map <ScrollWheelDown> <C-E>
 map <S-ScrollWheelDown> <C-D>
+
+" 光标导航设置
+inoremap <C-d> <Del>
+cnoremap <c-d> <Delete>
+
+cnoremap <c-b> <Left>
+inoremap <c-b> <Left>
+
+cnoremap <c-f> <Right>
+inoremap <c-f> <Right>
+
+inoremap <C-k> <Up>
+inoremap <C-j> <Down>
+
+inoremap <C-e> <End>
+
+inoremap <C-a> <Home>
+cnoremap <C-a> <Home>

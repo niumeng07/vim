@@ -1,7 +1,8 @@
 {
     "coc.preferences.colorSupport": true,
     "coc.preferences.extensionUpdateCheck": "daily",
-    "coc.preferences.formatOnSaveFiletypes": ["javascript", "python"], //, "java", "scala", "c", "h", "hh", "hpp", "cc", "cu", "cpp", json
+    //, "java", "scala", "c", "h", "hh", "hpp", "cc", "cu", "cpp", json
+    "coc.preferences.formatOnSaveFiletypes": ["javascript", "python"],
     "coc.preferences.highlightTimeout": 1000,
     "coc.preferences.rootPatterns": [".git", ".vim", ".projections.json", ".project", "build.sbt", "build.sc", "build.grade", "pom.xml"],
     "coc.preferences.formatOnType": true,
@@ -64,7 +65,10 @@
 
     // coc-pyright
     "python.linting.pylintEnabled": false,
-    "python.pythonPath": "/usr/local/bin/python3",
+    "python.linting.pytypeEnabled": false,
+    "python.pythonPath": "python3",
+    // pip3 install --upgrade autopep8
+    "python.formatting.autopep8Path": "autopep8",
     "python.formatting.autopep8Args": ["--max-line-length", "120", "--experimental"],
     "python.analysis.autoSearchPaths": true,
     "diagnostic.showUnused": false,
@@ -92,8 +96,8 @@
     "suggest.triggerCompletionWait": 50,
 
     "metals.enable": true,
-    "xml.java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/",
-    "metals.javaHome": "/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home",
+    // "xml.java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/",
+    // "metals.javaHome": "/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home",
     "metals.mavenScript": "mvn ch.epfl.scala:maven-bloop_2.10:<bloop_version>:bloopInstall",
 
     "yank.enableCompletion": false,
@@ -154,10 +158,19 @@
             "command": "lua-lsp",
             "filetypes": ["lua"]
         },
+        "intelephense": {
+           "command": "intelephense",
+           "args": ["--stdio"],
+           "filetypes": ["php"],
+           "initializationOptions": {
+             "storagePath": "/tmp/intelephense"
+           }
+        },
         "phplang": {
             "command": "php",
             "args": ["/path/to/vendor/felixfbecker/language-server/bin/php-language-server.php"],
             "filetypes": ["php"]
          }
-    }
+    },
+    "snippets.ultisnips.pythonPrompt": false
 }

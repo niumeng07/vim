@@ -43,6 +43,7 @@ wget https://github.com/google/google-java-format/releases/download/google-java-
 ```sh
 vim +GoInstallBinaries
 npm i -g neovim
+go get -u github.com/stamblerre/gocode
 ```
  
 2. support for ag 
@@ -125,8 +126,13 @@ sudo make install
 ```
  
 6. hack nerd font
+# ```sh
+# brew install homebrew/cask-fonts/font-hackgen-nerd --cask
+# ```
+10. font
 ```sh
-brew install homebrew/cask-fonts/font-hackgen-nerd --cask
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
 ```
 
 7. floaterm for neovim 
@@ -139,19 +145,20 @@ sudo pip3 install neovim-remote
 npm i -g sql-language-server
 npm i -g bash-language-server
 go get github.com/mattn/efm-langserver
+# or
+# brew install sql-language-server
+# brew install bash-language-server
+# brew install efm-langserver
 sudo pip3 install cmake-language-server
 npm install -g dockerfile-language-server-nodejs
 sudo pip install 'python-language-server[all]'
 sudo pip3 install 'python-language-server[all]'
+sudo pip install pynvim
+sudo pip3 install pynvim
 sudo pip install vim-vint
 sudo pip3 install vim-vint
 ```
 
-10. font
-```sh
-brew tap homebrew/cask-fonts
-brew install --cask font-hack-nerd-font
-```
 
 ### Plugins deprecated 
 - [Yggdroot/indentLine](https://github.com/Yggdroot/indentLine) 
