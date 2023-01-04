@@ -96,8 +96,8 @@
     "suggest.triggerCompletionWait": 50,
 
     "metals.enable": true,
-    // "xml.java.home": "/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/",
-    // "metals.javaHome": "/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home",
+    "xml.java.home": "/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home",
+    "metals.javaHome": "/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home",
     "metals.mavenScript": "mvn ch.epfl.scala:maven-bloop_2.10:<bloop_version>:bloopInstall",
 
     "yank.enableCompletion": false,
@@ -170,7 +170,7 @@
             "command": "php",
             "args": ["/path/to/vendor/felixfbecker/language-server/bin/php-language-server.php"],
             "filetypes": ["php"]
-         }
+        }
     },
     "snippets.ultisnips.pythonPrompt": false
 }
