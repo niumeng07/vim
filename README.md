@@ -36,6 +36,7 @@ Install with vim-plug.
 cd ~ && /bin/rm -rf .vim && git clone https://github.com/niumeng07/vim.git .vim --recursive
 vim +PlugInstall 
 wget https://github.com/google/google-java-format/releases/download/google-java-format-1.9/google-java-format-1.9-all-third_party.jar ~/.vim/third_party/format
+or download latest version from https://github.com/google/google-java-format/releases/
 ``` 
  
 ### third-party 
