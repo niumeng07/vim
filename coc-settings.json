@@ -1,10 +1,8 @@
 {
-    "coc.preferences.colorSupport": true,
+    "colors.enable": true,
     "coc.preferences.extensionUpdateCheck": "daily",
     //, "java", "scala", "c", "h", "hh", "hpp", "cc", "cu", "cpp", json
-    "coc.preferences.formatOnSaveFiletypes": ["javascript", "python"],
-    "coc.preferences.highlightTimeout": 1000,
-    "coc.preferences.rootPatterns": [".git", ".vim", ".projections.json", ".project", "build.sbt", "build.sc", "build.grade", "pom.xml"],
+    "workspace.rootPatterns": [".git", ".vim", ".projections.json", ".project", "build.sbt", "build.sc", "build.grade", "pom.xml"],
     "coc.preferences.formatOnType": true,
     "cursors.cancelKey": "<BackSpace>",
 
@@ -12,7 +10,6 @@
     "diagnostic.errorSign": "",
     "diagnostic.hintSign": "",
     "diagnostic.infoSign": "",
-    "diagnostic.maxWindowHeight": 10,
     "diagnostic.refreshOnInsertMode": true,
     "diagnostic.warningSign": "",
 
@@ -87,18 +84,13 @@
 
     "suggest.acceptSuggestionOnCommitCharacter": true,
     "suggest.detailField": "abbr",
-    "suggest.floatEnable": true,
     "suggest.minTriggerInputLength": 1,
     "suggest.noselect": true,
-    "suggest.numberSelect": false,
     "suggest.timeout": 5000,
     "suggest.triggerAfterInsertEnter": true,
     "suggest.triggerCompletionWait": 50,
 
-    "metals.enable": true,
     "xml.java.home": "/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home",
-    "metals.javaHome": "/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home",
-    "metals.mavenScript": "mvn ch.epfl.scala:maven-bloop_2.10:<bloop_version>:bloopInstall",
 
     "yank.enableCompletion": false,
     "yank.highlight.duration": 200,
@@ -120,11 +112,6 @@
             "initializationOptions": {
                 "usePlaceholders": true
             }
-        },
-        "metals": {
-            "command": "metals-vim",
-            "rootPatterns": ["build.sbt"],
-            "filetypes": ["scala", "sbt"]
         },
         "bash": {
             "command": "bash-language-server",

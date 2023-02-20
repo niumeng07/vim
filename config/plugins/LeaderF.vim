@@ -1,9 +1,9 @@
 " Leaderf
 let g:Lf_WindowPosition = 'popup'
 nnoremap <silent> <leader>v :LeaderfFunction <CR>
-" nnoremap <silent> <leader>c :LeaderfHistoryCmd <CR>
-" nnoremap <silent> <leader>s :LeaderfHistorySearch <CR>
-" nnoremap <silent> <leader>m :LeaderfMru <CR>
+nnoremap <silent> <leader>lc :LeaderfHistoryCmd <CR>
+nnoremap <silent> <leader>ls :LeaderfHistorySearch <CR>
+nnoremap <silent> <leader>lm :LeaderfMru <CR>
 
 let g:Lf_PreviewInPopup = 1
 let g:Lf_CommandMap = {'<C-K>': ['<Up>'], '<C-J>': ['<Down>']}
