@@ -36,6 +36,7 @@ Install with vim-plug.
 cd ~ && /bin/rm -rf .vim && git clone https://github.com/niumeng07/vim.git .vim --recursive
 vim +PlugInstall 
 wget https://github.com/google/google-java-format/releases/download/google-java-format-1.9/google-java-format-1.9-all-third_party.jar ~/.vim/third_party/format
+or download latest version from https://github.com/google/google-java-format/releases/
 ``` 
  
 ### third-party 
@@ -68,7 +69,7 @@ If coc can't find package.json, delete ~/.config/coc/extensions/node_modules/* a
 vim -c "PlugUpdate"
 vim -c "CocInstall coc-explorer coc-floaterm coc-git coc-pairs coc-prettier coc-lists coc-marketplace|q"
 vim -c "CocInstall coc-vetur coc-rls coc-solargraph coc-calc coc-translator coc-yank|q"
-vim -c "CocInstall coc-metals coc-phpls coc-vimlsp coc-go coc-html|q"  # langserver
+vim -c "CocInstall coc-phpls coc-vimlsp coc-go coc-html|q"  # langserver
 vim -c "CocInstall coc-java coc-json coc-xml coc-yaml coc-css coc-emmet coc-tslint coc-tsserver|q"
 vim -c "CocInstall coc-dictionary coc-word coc-snippets coc-tag coc-ultisnips coc-gocode|q"  # completion
 # vim -c "CocInstall coc-omni|q" # will block vim on completion
