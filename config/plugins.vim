@@ -24,6 +24,7 @@ function! LoadPlugin(ConfigFlag)
     Plug 'ervandew/supertab'  " perform all insert cpmpletion using the tab key.
     Plug 'jiangmiao/auto-pairs'  " substitute for coc-pairs
     Plug 'github/copilot.vim'  " Open AIpair programmer
+    Plug 'scalameta/nvim-metals'
     if a:ConfigFlag ==# 'normal'
         Plug 'vim-airline/vim-airline'
         Plug 'vim-airline/vim-airline-themes'
