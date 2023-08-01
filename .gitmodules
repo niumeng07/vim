@@ -34,17 +34,13 @@
 	path = plugged/fzf
 	url = https://github.com/junegunn/fzf.git
 	branch = master
-[submodule "plugged/gocode"]
-	path = plugged/gocode
-	url = https://github.com/mdempsky/gocode.git
-	branch = master
 [submodule "plugged/supertab"]
 	path = plugged/supertab
 	url = https://github.com/ervandew/supertab.git
 	branch = master
-[submodule "plugged/tabnine-vim"]
-	path = plugged/tabnine-vim
-	url = https://github.com/codota/tabnine-vim.git
+[submodule "plugged/tabnine-nvim"]
+	path = plugged/tabnine-nvim
+	url = https://github.com/codota/tabnine-nvim.git
 	branch = master
 [submodule "plugged/tabular"]
 	path = plugged/tabular
