@@ -127,9 +127,9 @@ sudo make install
 ```
  
 6. hack nerd font
-# ```sh
-# brew install homebrew/cask-fonts/font-hackgen-nerd --cask
-# ```
+```sh
+brew install homebrew/cask-fonts/font-hackgen-nerd --cask
+```
 10. font
 ```sh
 brew tap homebrew/cask-fonts
