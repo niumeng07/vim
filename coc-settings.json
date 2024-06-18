@@ -63,10 +63,14 @@
     // coc-pyright
     "python.linting.pylintEnabled": false,
     "python.linting.pytypeEnabled": false,
-    "python.pythonPath": "python3",
+    "python.pythonPath": "/opt/homebrew/bin//python3",
     // pip3 install --upgrade autopep8
     "python.formatting.autopep8Path": "autopep8",
     "python.formatting.autopep8Args": ["--max-line-length", "120", "--experimental"],
+    "black-formatter.enable" : true,
+    "black-formatter.useDetectBlackCommand" : true,
+    "black-formatter.builtin.pythonPath" : "",
+    "black-formatter.trace.server" : "off",
     "python.analysis.autoSearchPaths": true,
     "diagnostic.showUnused": false,
 
@@ -90,7 +94,7 @@
     "suggest.triggerAfterInsertEnter": true,
     "suggest.triggerCompletionWait": 50,
 
-    "xml.java.home": "/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home",
+    "xml.java.home": "/opt/homebrew/Cellar/openjdk/20.0.2/libexec/openjdk.jdk/Contents/Home",
 
     "yank.enableCompletion": false,
     "yank.highlight.duration": 200,
