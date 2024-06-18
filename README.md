@@ -72,11 +72,15 @@ vim -c "CocInstall coc-vetur coc-rls coc-solargraph coc-calc coc-translator coc-
 vim -c "CocInstall coc-phpls coc-vimlsp coc-go coc-html|q"  # langserver
 vim -c "CocInstall coc-java coc-json coc-xml coc-yaml coc-css coc-emmet coc-tslint coc-tsserver|q"
 vim -c "CocInstall coc-dictionary coc-word coc-snippets coc-tag coc-ultisnips coc-gocode|q"  # completion
+vim -c "CocInstall @yaegassy/coc-black-formatter"   # 更严格的 python formatter
+vim -c "CocCommand black-formatter.installServer"
+
 # vim -c "CocInstall coc-omni|q" # will block vim on completion
 # vim -c "CocInstall coc-tabnine|q" # Too much cpu used.
 # vim -c "CocInstall coc-ccls coc-sh|q"  # Use language server instead.
 # vim -c "CocInstall coc-syntax|q"  # get words from syntax for completion, use coc-dictionary/coc-word instead.
 # vim -c "CocInstall coc-highlight|q" # call Node, too much CPU used.
+
 vim -c 'CocUpdateSync|q'
 ```
 
