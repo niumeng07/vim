@@ -64,6 +64,8 @@
     "python.linting.pylintEnabled": false,
     "python.linting.pytypeEnabled": false,
     "pyright.inlayHints.parameterTypes": false,
+    "pyright.inlayHints.variableTypes": false,
+    "pyright.inlayHints.functionReturnTypes": false,
     "python.pythonPath": "/opt/homebrew/bin//python3.10",
     // pip3 install --upgrade autopep8
     "python.formatting.autopep8Path": "autopep8",
