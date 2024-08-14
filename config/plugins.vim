@@ -14,7 +14,7 @@ function! LoadPlugin(ConfigFlag)
     Plug 'liuchengxu/vim-which-key', {'on': ['WhichKey', 'WhichKey!']}
     Plug 'Shougo/neco-vim'
     Plug 'neoclide/coc-neco'  " competion source for coc.nvim, depend on neco-vim
-    Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': '~/.vim/third_party/yarn/bin/yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'sheerun/vim-polyglot'  " language pack for vim
     Plug 'mg979/vim-visual-multi'
     Plug 'terryma/vim-smooth-scroll'
@@ -28,7 +28,6 @@ function! LoadPlugin(ConfigFlag)
     if a:ConfigFlag ==# 'normal'
         Plug 'vim-airline/vim-airline'
         Plug 'vim-airline/vim-airline-themes'
-        " Plug 'codota/tabnine-vim', {'branch': 'python3'}
         Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
     endif
     Plug 'vim-scripts/DoxygenToolkit.vim'

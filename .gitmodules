@@ -30,10 +30,6 @@
 	path = plugged/coc.nvim
 	url = https://github.com/neoclide/coc.nvim.git
 	branch = master
-[submodule "plugged/fzf"]
-	path = plugged/fzf
-	url = https://github.com/junegunn/fzf.git
-	branch = master
 [submodule "plugged/supertab"]
 	path = plugged/supertab
 	url = https://github.com/ervandew/supertab.git
@@ -97,10 +93,6 @@
 [submodule "plugged/vim-visual-multi"]
 	path = plugged/vim-visual-multi
 	url = https://github.com/mg979/vim-visual-multi.git
-	branch = master
-[submodule "plugged/vim-which-key"]
-	path = plugged/vim-which-key
-	url = https://github.com/liuchengxu/vim-which-key.git
 	branch = master
 [submodule "plugged/vim-floaterm"]
 	path = plugged/vim-floaterm

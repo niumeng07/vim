@@ -108,6 +108,16 @@
                 "client": { "snippetSupport": true }
             }
         },
+        // ccls 内存泄漏,换成clangd,但是clangd需要先编译(本地开发没有编译环境)
+        //"clangd": {
+        //    "command": "clangd",
+        //    "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+        //    "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
+        //},
+        "digestif": {
+            "command": "digestif",
+            "filetypes": ["tex", "plaintex", "context"]
+        },
         "golang": {
             "command": "gopls",
             "rootPatterns": ["go.work", "go.mod", ".vim/", ".git/", ".hg/"],
@@ -143,6 +153,12 @@
             "command": "docker-langserver",
             "filetypes": ["dockerfile"],
             "args": ["--stdio"]
+        },
+        "dockercompose": {
+            "command": "docker-compose-langserver",
+            "args": ["--stdio"],
+            "filetypes": ["dockercompose"],
+            "rootPatterns": [".git", ".env", "docker-compose.yml", "compose.yml"]
         },
         "lua": {
             "command": "lua-lsp",
