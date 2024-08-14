@@ -72,6 +72,8 @@ vim -c "CocInstall coc-vetur coc-rls coc-solargraph coc-calc coc-translator coc-
 vim -c "CocInstall coc-phpls coc-vimlsp coc-go coc-html|q"  # langserver
 vim -c "CocInstall coc-java coc-json coc-xml coc-yaml coc-css coc-emmet coc-tslint coc-tsserver|q"
 vim -c "CocInstall coc-dictionary coc-word coc-snippets coc-tag coc-ultisnips coc-gocode|q"  # completion
+vim -c "CocInstall coc-markdownlint|q"
+
 # vim -c "CocInstall @yaegassy/coc-black-formatter"   # 更严格的 python formatter, 该formater过于啰嗦
 # vim -c "CocCommand black-formatter.installServer"
 
@@ -133,11 +135,9 @@ sudo make install
 6. hack nerd font
 ```sh
 brew install homebrew/cask-fonts/font-hackgen-nerd --cask
-```
-10. font
-```sh
 brew tap homebrew/cask-fonts
 brew install --cask font-hack-nerd-font
+brew search '/font-.*-nerd-font/' | awk '{ print $1 }' | xargs -I{} brew install --cask {} || true
 ```
 
 7. floaterm for neovim 
@@ -148,12 +148,18 @@ sudo pip3 install neovim-remote
 9. Other Language Support 
 ```sh
 npm i -g sql-language-server
+# orbrew install sql-language-server
+
 npm i -g bash-language-server
+# or brew install bash-language-server
+npm install -g dockerfile-language-server-nodejs
+# 以下是tex language server (cp third_party/digestif /usr/local/bin/digestif && chmod +x /usr/local/bin/digestif)
+sudo curl -o /usr/local/bin/digestif https://raw.githubusercontent.com/astoff/digestif/master/scripts/digestif
+sudo chmod +x /usr/local/bin/digestif
+
 go get github.com/mattn/efm-langserver
-# or
-# brew install sql-language-server
-# brew install bash-language-server
-# brew install efm-langserver
+# or brew install efm-langserver
+
 sudo pip3 install cmake-language-server
 npm install -g dockerfile-language-server-nodejs
 sudo pip install 'python-language-server[all]'
