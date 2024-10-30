@@ -124,6 +124,3 @@
 [submodule "plugged/copilot.vim"]
 	path = plugged/copilot.vim
 	url = https://github.com/github/copilot.vim.git
-[submodule "plugged/tabnine-nvim"]
-	path = plugged/tabnine-nvim
-	url = git@github.com:codota/tabnine-nvim.git
