@@ -38,10 +38,6 @@
 	path = plugged/supertab
 	url = https://github.com/ervandew/supertab.git
 	branch = master
-[submodule "plugged/tabnine-nvim"]
-	path = plugged/tabnine-nvim
-	url = https://github.com/codota/tabnine-nvim.git
-	branch = master
 [submodule "plugged/tabular"]
 	path = plugged/tabular
 	url = https://github.com/godlygeek/tabular.git
@@ -124,3 +120,7 @@
 [submodule "plugged/copilot.vim"]
 	path = plugged/copilot.vim
 	url = https://github.com/github/copilot.vim.git
+[submodule "plugged/tabnine-nvim"]
+	path = plugged/tabnine-nvim
+	url = https://github.com/codota/tabnine-nvim.git
+	branch = master
