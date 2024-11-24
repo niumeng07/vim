@@ -9,9 +9,12 @@ function! LoadPlugin(ConfigFlag)
     Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries', 'for': 'go'}
     Plug 'derekwyatt/vim-scala', {'for': 'scala'}
     Plug 'niumeng07/vim-snippets'
-    Plug 'junegunn/fzf', {'dir': '~/.vim/plugged/fzf', 'do': './install --all'}
+    " Plug 'junegunn/fzf', {'dir': '~/.vim/plugged/fzf', 'do': './install --all'}
     Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
-    Plug 'liuchengxu/vim-which-key', {'on': ['WhichKey', 'WhichKey!']}
+    " Plug 'liuchengxu/vim-which-key', {'on': ['WhichKey', 'WhichKey!']}
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'folke/which-key.nvim'
     Plug 'Shougo/neco-vim'
     Plug 'neoclide/coc-neco'  " competion source for coc.nvim, depend on neco-vim
     Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': '~/.vim/third_party/yarn/bin/yarn install --frozen-lockfile'}
