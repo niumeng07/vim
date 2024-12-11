@@ -28,7 +28,6 @@ function! LoadPlugin(ConfigFlag)
     if a:ConfigFlag ==# 'normal'
         Plug 'vim-airline/vim-airline'
         Plug 'vim-airline/vim-airline-themes'
-        " Plug 'codota/tabnine-vim', {'branch': 'python3'}
         Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
     endif
     Plug 'vim-scripts/DoxygenToolkit.vim'
