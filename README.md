@@ -125,7 +125,7 @@ build ccls from source.
 git clone https://github.com/MaskRay/ccls --recursive
 cd ccls
 brew info llvm
-cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/usr/local/Cellar/llvm/<Your Version>/lib/cmake
+cmake -S. -BRelease -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/usr/local/Cellar/llvm/18.1.8/lib/cmake/
 cmake --build Release
 cd Release
 make -j
