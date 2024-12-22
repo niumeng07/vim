@@ -66,13 +66,14 @@ $HOME/.vim/third_party/yarn/bin/yarn add coc-json coc-snippets
 ```
 If coc can't find package.json, delete ~/.config/coc/extensions/node_modules/* and reinstall coc-plugins.
 ```sh
-vim -c "PlugUpdate"
+vim -c "PlugUpdate|q"
 vim -c "CocInstall coc-explorer coc-floaterm coc-git coc-pairs coc-prettier coc-lists coc-marketplace|q"
 vim -c "CocInstall coc-vetur coc-rls coc-solargraph coc-calc coc-translator coc-yank|q"
 vim -c "CocInstall coc-phpls coc-vimlsp coc-go coc-html|q"  # langserver
 vim -c "CocInstall coc-java coc-json coc-xml coc-yaml coc-css coc-emmet coc-tslint coc-tsserver|q"
 vim -c "CocInstall coc-dictionary coc-word coc-snippets coc-tag coc-ultisnips coc-gocode|q"  # completion
 vim -c "CocInstall coc-markdownlint|q"
+vim -c "CocInstall coc-pyright"
 
 # vim -c "CocInstall @yaegassy/coc-black-formatter"   # 更严格的 python formatter, 该formater过于啰嗦
 # vim -c "CocCommand black-formatter.installServer"
@@ -114,10 +115,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lock
 ```
 
 4. Python support 
-```sh
-# vim -c "CocInstall coc-python" # Too much CPU used.
-vim -c "CocInstall coc-pyright"
-```
 
 5. C++ support 
 build ccls from source. 
@@ -135,7 +132,6 @@ sudo make install
 6. hack nerd font
 ```sh
 brew install homebrew/cask-fonts/font-hackgen-nerd --cask
-brew tap homebrew/cask-fonts
 brew install --cask font-hack-nerd-font
 brew search '/font-.*-nerd-font/' | awk '{ print $1 }' | xargs -I{} brew install --cask {} || true
 ```
@@ -160,8 +156,8 @@ sudo chmod +x /usr/local/bin/digestif
 go get github.com/mattn/efm-langserver
 # or brew install efm-langserver
 
-sudo pip3 install cmake-language-server
 npm install -g dockerfile-language-server-nodejs
+sudo pip3 install cmake-language-server
 sudo pip install 'python-language-server[all]'
 sudo pip3 install 'python-language-server[all]'
 sudo pip install pynvim
@@ -169,7 +165,6 @@ sudo pip3 install pynvim
 sudo pip install vim-vint
 sudo pip3 install vim-vint
 ```
-
 
 ### Plugins deprecated 
 - [Yggdroot/indentLine](https://github.com/Yggdroot/indentLine) 
