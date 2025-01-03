@@ -9,11 +9,10 @@ function! LoadPlugin(ConfigFlag)
     Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries', 'for': 'go'}
     Plug 'derekwyatt/vim-scala', {'for': 'scala'}
     Plug 'niumeng07/vim-snippets'
-    " Plug 'junegunn/fzf', {'dir': '~/.vim/plugged/fzf', 'do': './install --all'}
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
     Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
-    " Plug 'liuchengxu/vim-which-key', {'on': ['WhichKey', 'WhichKey!']}
     Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim'
     Plug 'folke/which-key.nvim'
     Plug 'Shougo/neco-vim'
     Plug 'neoclide/coc-neco'  " competion source for coc.nvim, depend on neco-vim
@@ -28,10 +27,10 @@ function! LoadPlugin(ConfigFlag)
     Plug 'jiangmiao/auto-pairs'  " substitute for coc-pairs
     Plug 'github/copilot.vim'  " Open AIpair programmer
     Plug 'scalameta/nvim-metals'
+    Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
     if a:ConfigFlag ==# 'normal'
         Plug 'vim-airline/vim-airline'
         Plug 'vim-airline/vim-airline-themes'
-        Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
     endif
     Plug 'vim-scripts/DoxygenToolkit.vim'
     call plug#end()

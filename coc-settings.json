@@ -66,7 +66,7 @@
     "pyright.inlayHints.parameterTypes": false,
     "pyright.inlayHints.variableTypes": false,
     "pyright.inlayHints.functionReturnTypes": false,
-    "python.pythonPath": "/opt/homebrew/bin//python3.10",
+    "python.pythonPath": "/opt/homebrew/bin/python3.10",
     // pip3 install --upgrade autopep8
     "python.formatting.autopep8Path": "autopep8",
     "python.formatting.autopep8Args": ["--max-line-length", "120", "--experimental"],
@@ -93,7 +93,7 @@
     "suggest.triggerAfterInsertEnter": true,
     "suggest.triggerCompletionWait": 50,
 
-    "xml.java.home": "/opt/homebrew/Cellar/openjdk/20.0.2/libexec/openjdk.jdk/Contents/Home",
+    "xml.java.home": "/opt/homebrew/Cellar/openjdk/23.0.1/libexec/openjdk.jdk/Contents/Home",
 
     "yank.enableCompletion": false,
     "yank.highlight.duration": 200,

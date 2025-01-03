@@ -1,7 +1,9 @@
 # Introduction
+
 My vimrc.
 
 ## Plugins
+
 - [google/vim-maktaba](https://github.com/google/vim-maktaba)
 - [google/vim-glaive](https://github.com/google/vim-glaive)
 - [google/vim-codefmt](https://github.com/google/vim-codefmt)
@@ -37,20 +39,25 @@ vim +PlugInstall
 ```
 
 ## third-party
+
 ### go support
+
 ```sh
 vim +GoInstallBinaries
 npm i -g neovim
-go get -u github.com/stamblerre/gocode
+go install github.com/stamblerre/gocode@latest
 ```
 
 ### tools
+
 ```sh
 brew install ripgrip  # brew install the_silver_searcher
-brew install node  # curl -sL install-node.now.sh/lts | sh
+brew install node     # curl -sL install-node.now.sh/lts | sh
+brew install ctags    # dependencies of LeaderF
 ```
 
 ### vim tools
+
 ```sh
 vim -c "PlugUpdate"
 vim -c "CocInstall coc-explorer coc-floaterm coc-git coc-pairs coc-prettier|q"
@@ -66,8 +73,8 @@ vim -c 'CocUpdateSync|q'
 ```
 
 ### Coc dependencies
-Install coc dependencies:
-```
+
+```sh
 ./coursier bootstrap \
   --java-opt -Xss4m \
   --java-opt -Xms100m \
@@ -79,6 +86,7 @@ Install coc dependencies:
 ```
 
 ### C++ support
+
 ```sh
 cd third_party/ccls
 cmake -S. -BRelease -DCMAKE_BUILD_TYPE=Release \
@@ -101,7 +109,8 @@ brew search '/font-.*-nerd-font/' | awk '{ print $1 }' | xargs -I{} \
 ```
 
 ### java
-```
+
+```sh
 download google-java-format-1.9-all-third_party.jar
 from https://github.com/google/google-java-format/releases/
 to ~/.vim/third_party/format
@@ -114,7 +123,8 @@ npm i -g sql-language-server  # or brew install sql-language-server
 npm i -g bash-language-server # or brew install bash-language-server
 npm install -g dockerfile-language-server-nodejs
 
-go get github.com/mattn/efm-langserver   # or brew install efm-langserver
+go install github.com/mattn/efm-langserver@latest   # or brew install efm-langserver
+go install golang.org/x/tools/gopls@latest
 
 sudo pip3 install pynvim --break-system-packages
 sudo pip3 install cmake-language-server --break-system-packages
