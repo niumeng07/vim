@@ -1,10 +1,9 @@
 " fzf
 
 if has('nvim')
-    " nnoremap <C-p> : FloatermNew --position=bottom fzf <CR>
-    nnoremap <C-p> : FZF <CR>
+    nnoremap <C-p> : Files <CR>
 else
-    nnoremap <C-p> : FZF <CR>
+    nnoremap <C-p> : Files <CR>
 endif
 
 let g:fzf_colors = { 
