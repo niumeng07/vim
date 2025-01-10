@@ -28,6 +28,7 @@ function! LoadPlugin(ConfigFlag)
     Plug 'github/copilot.vim'  " Open AIpair programmer
     Plug 'scalameta/nvim-metals'
     Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
+    Plug 'github/copilot.vim'
     if a:ConfigFlag ==# 'normal'
         Plug 'vim-airline/vim-airline'
         Plug 'vim-airline/vim-airline-themes'
