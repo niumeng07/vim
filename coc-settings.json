@@ -2,6 +2,7 @@
     "colors.enable": true,
     "coc.preferences.extensionUpdateCheck": "daily",
     //, "java", "scala", "c", "h", "hh", "hpp", "cc", "cu", "cpp", json
+    "http.proxy": "127.0.0.1:8001",  // Note: must not be prefixed with http:// or https://
     "workspace.rootPatterns": [".git", ".vim", ".projections.json", ".project", "build.sbt", "build.sc", "build.grade", "pom.xml"],
     "coc.preferences.formatOnType": true,
     "cursors.cancelKey": "<BackSpace>",
