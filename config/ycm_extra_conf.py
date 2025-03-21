@@ -95,7 +95,7 @@ flags = [
     '-isystem', '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include',
     '-isystem', '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1',
     '-isystem', '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include/',
-    '-isystem', '/usr/local/include',
+    '-isystem', '/opt/homebrew/include',
     '-std=c11',
     '-std=c++1z',
     '-stdlib=libc++',
