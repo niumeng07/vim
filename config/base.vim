@@ -80,8 +80,8 @@ if has('mac') && !has('nvim')
     set clipboard+=unnamed   " leading to block paste error in nvim
 elseif has('nvim')
     let $GIT_EDITOR = 'nvr -cc split --remote-wait'
-    let python_host_prog='/Library/Frameworks/Python.framework/Versions/2.7/bin/python'
-    let python3_host_prog='/opt/homebrew/bin/python3.10'
+    let python_host_prog='/usr/local/bin/python'
+    let python3_host_prog=join([$PYTHON3_HOME, '/bin/python3.10'], '/')
     let ruby_host_prog = exepath('neovim-ruby-host')
     set listchars=
     let g:perl_host_prog = '/usr/bin/perl'
