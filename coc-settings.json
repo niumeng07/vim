@@ -1,8 +1,8 @@
 {
     "colors.enable": true,
-    "coc.preferences.extensionUpdateCheck": "daily",
+    "extensions.updateCheck": "daily",
     //, "java", "scala", "c", "h", "hh", "hpp", "cc", "cu", "cpp", json
-    "http.proxy": "127.0.0.1:8001",  // Note: must not be prefixed with http:// or https://
+    "http.proxy": "http://127.0.0.1:8001",
     "workspace.rootPatterns": [".git", ".vim", ".projections.json", ".project", "build.sbt", "build.sc", "build.grade", "pom.xml"],
     "coc.preferences.formatOnType": true,
     "cursors.cancelKey": "<BackSpace>",
@@ -67,7 +67,7 @@
     "pyright.inlayHints.parameterTypes": false,
     "pyright.inlayHints.variableTypes": false,
     "pyright.inlayHints.functionReturnTypes": false,
-    "python.pythonPath": "/opt/homebrew/bin//python3.10",
+    "python.pythonPath": "${env:PYTHON3_HOME}/bin/python3.10",
     // pip3 install --upgrade autopep8
     "python.formatting.autopep8Path": "autopep8",
     "python.formatting.autopep8Args": ["--max-line-length", "120", "--experimental"],
@@ -94,7 +94,7 @@
     "suggest.triggerAfterInsertEnter": true,
     "suggest.triggerCompletionWait": 50,
 
-    "xml.java.home": "/opt/homebrew/Cellar/openjdk/23.0.2/libexec/openjdk.jdk/Contents/Home",
+    "xml.java.home": "${env:JAVA_HOME}",
 
     "yank.enableCompletion": false,
     "yank.highlight.duration": 200,

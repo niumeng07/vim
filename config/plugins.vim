@@ -4,7 +4,7 @@ function! LoadPlugin(ConfigFlag)
     Plug 'google/vim-glaive'
     Plug 'google/vim-codefmt'
     Plug 'niumeng07/vim-colorschemes'
-    Plug 'Lokaltog/vim-easymotion'
+    " Plug 'Lokaltog/vim-easymotion'     # set mouse_mode=a
     Plug 'godlygeek/tabular'  " use for alignment
     Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries', 'for': 'go'}
     Plug 'derekwyatt/vim-scala', {'for': 'scala'}
