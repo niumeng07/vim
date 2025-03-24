@@ -29,6 +29,8 @@ function! LoadPlugin(ConfigFlag)
     Plug 'scalameta/nvim-metals'
     Plug 'codota/tabnine-nvim', { 'do': './dl_binaries.sh' }
     Plug 'github/copilot.vim'
+    Plug 'bullets-vim/bullets.vim'
+    Plug 'tpope/vim-surround'
     if a:ConfigFlag ==# 'normal'
         Plug 'vim-airline/vim-airline'
         Plug 'vim-airline/vim-airline-themes'
