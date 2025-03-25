@@ -50,13 +50,11 @@
     "list.height": 10,
     "list.maxPreviewHeight": 6,
     "list.source.grep.defaultOptions": ["--strict", "--no-sort"],
-    "list.source.grep.defaultArgs": [ "-e"],
+    "list.source.grep.defaultArgs": ["-e"],
     "list.source.lines.defaultArgs": ["-e"],
     "list.source.words.defaultArgs": ["-e"],
-    "list.source.searchhistory.defaultOptions": [
-        "--number-select", "--regex", "--ignore-case"],
-    "list.source.cmdhistory.defaultOptions": [
-        "--number-select", "--regex", "--ignore-case", "--no-sort"],
+    "list.source.searchhistory.defaultOptions": ["--number-select", "--regex", "--ignore-case"],
+    "list.source.cmdhistory.defaultOptions": ["--number-select", "--regex", "--ignore-case", "--no-sort"],
 
     "prettier.tabWidth": 4,
     "prettier.printWidth": 200,
@@ -166,12 +164,12 @@
             "filetypes": ["lua"]
         },
         "intelephense": {
-           "command": "intelephense",
-           "args": ["--stdio"],
-           "filetypes": ["php"],
-           "initializationOptions": {
-             "storagePath": "/tmp/intelephense"
-           }
+            "command": "intelephense",
+            "args": ["--stdio"],
+            "filetypes": ["php"],
+            "initializationOptions": {
+                "storagePath": "/tmp/intelephense"
+            }
         },
         "phplang": {
             "command": "php",

@@ -8,33 +8,40 @@ My vimrc.
 - [google/vim-glaive](https://github.com/google/vim-glaive)
 - [google/vim-codefmt](https://github.com/google/vim-codefmt)
 - [niumeng07/vim-colorschemes](https://github.com/niumeng07/vim-colorschemes)
-- [Lokaltog/vim-easymotion](https://github.com/Lokaltog/vim-easymotion)
 - [godlygeek/tabular](https://github.com/godlygeek/tabular)
 - [fatih/vim-go](https://github.com/fatih/vim-go)
 - [derekwyatt/vim-scala](https://github.com/derekwyatt/vim-scala)
 - [niumeng07/vim-snippets](https://github.com/niumeng07/vim-snippets)
 - [junegunn/fzf](https://github.com/junegunn/fzf)
+- [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim)
 - [Yggdroot/LeaderF](https://github.com/Yggdroot/LeaderF)
-- [liuchengxu/vim-which-key](https://github.com/liuchengxu/vim-which-key)
-- [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim)
+- [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
+- [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
 - [Shougo/neco-vim](https://github.com/Shougo/neco-vim)
 - [neoclide/coc-neco](https://github.com/neoclide/coc-neco)
+- [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim)
 - [sheerun/vim-polyglot](https://github.com/sheerun/vim-polyglot)
 - [mg979/vim-visual-multi](https://github.com/mg979/vim-visual-multi)
 - [terryma/vim-smooth-scroll](https://github.com/terryma/vim-smooth-scroll)
 - [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
-- [vim-scripts/DoxygenToolkit.vim](https://github.com/vim-scripts/DoxygenToolkit.vim)
-- [voldikss/vim-floaterm.git](https://github.com/voldikss/vim-floaterm.git)
+- [voldikss/vim-floaterm](https://github.com/voldikss/vim-floaterm)
 - [vim-scripts/a.vim](https://github.com/vim-scripts/a.vim)
 - [ervandew/supertab](https://github.com/ervandew/supertab)
+- [jiangmiao/auto-pairs](https://github.com/jiangmiao/auto-pairs)
+- [github/copilot.vim](https://github.com/github/copilot.vim)
+- [scalameta/nvim-metals](https://github.com/scalameta/nvim-metals)
+- [codota/tabnine-nvim](https://github.com/codota/tabnine-nvim)
+- [github/copilot.vim](https://github.com/github/copilot.vim)
+- [bullets-vim/bullets.vim](https://github.com/bullets-vim/bullets.vim)
+- [tpope/vim-surround](https://github.com/tpope/vim-surround)
 - [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline)
 - [vim-airline/vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
-- [codota/tabnine-vim](https://github.com/codota/tabnine-vim)
+- [vim-scripts/DoxygenToolkit.vim](https://github.com/vim-scripts/DoxygenToolkit.vim)
 
 ## Install
 
 ```sh
-cd ~ && /bin/rm -rf .vim && git clone https://github.com/niumeng07/vim.git .vim --recursive
+cd ~ && mv .vim .vim.bak && git clone https://github.com/niumeng07/vim.git .vim --recursive
 vim +PlugInstall
 ```
 
@@ -53,22 +60,18 @@ go install github.com/stamblerre/gocode@latest
 ```sh
 brew install ripgrip  # brew install the_silver_searcher
 brew install node     # curl -sL install-node.now.sh/lts | sh
-brew install ctags    # dependencies of LeaderF
 ```
 
 ### vim tools
 
 ```sh
 vim -c "PlugUpdate"
-vim -c "CocInstall coc-explorer coc-floaterm coc-git coc-pairs coc-prettier|q"
-vim -c "CocInstall coc-lists coc-marketplace coc-tsserver|q"
-vim -c "CocInstall coc-vetur coc-rls coc-solargraph coc-calc coc-translator coc-yank|q"
-vim -c "CocInstall coc-phpls coc-vimlsp coc-go coc-html|q"
-vim -c "CocInstall coc-java coc-json coc-xml coc-yaml coc-css coc-emmet coc-tslint|q"
-vim -c "CocInstall coc-dictionary coc-word coc-snippets coc-tag coc-ultisnips coc-gocode|q"
-vim -c "CocInstall coc-markdownlint|q"
-vim -c "CocInstall coc-pyright"
-
+vim -c "CocInstall coc-css coc-json coc-java coc-yaml coc-xml coc-gocode coc-go coc-html"
+vim -c "CocInstall coc-vetur coc-tsserver coc-tslint coc-solargraph coc-rls coc-lists"
+vim -c "CocInstall coc-pyright coc-phpls coc-marketplace coc-markdownlint"
+vim -c "CocInstall coc-floaterm coc-git coc-explorer coc-emmet coc-dictionary"
+vim -c "CocInstall coc-calc coc-yank coc-word coc-vimlsp coc-ultisnips coc-translator coc-tag"
+vim -c "CocInstall coc-tabnine coc-snippets coc-prettier coc-pairs"
 vim -c 'CocUpdateSync|q'
 ```
 
