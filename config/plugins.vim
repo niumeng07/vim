@@ -36,5 +36,6 @@ function! LoadPlugin(ConfigFlag)
         Plug 'vim-airline/vim-airline-themes'
     endif
     Plug 'vim-scripts/DoxygenToolkit.vim'
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     call plug#end()
 endfunction
