@@ -62,7 +62,7 @@ brew install ripgrip  # brew install the_silver_searcher
 brew install node     # curl -sL install-node.now.sh/lts | sh
 ```
 
-### vim tools
+### coc plugins
 
 ```sh
 vim -c "PlugUpdate"
@@ -71,7 +71,7 @@ vim -c "CocInstall coc-vetur coc-tsserver coc-tslint coc-solargraph coc-rls coc-
 vim -c "CocInstall coc-pyright coc-phpls coc-marketplace coc-markdownlint"
 vim -c "CocInstall coc-floaterm coc-git coc-explorer coc-emmet coc-dictionary"
 vim -c "CocInstall coc-calc coc-yank coc-word coc-vimlsp coc-ultisnips coc-translator coc-tag"
-vim -c "CocInstall coc-tabnine coc-snippets coc-prettier coc-pairs"
+vim -c "CocInstall coc-tabnine coc-snippets coc-prettier coc-pairs coc-lua"
 vim -c 'CocUpdateSync|q'
 ```
 
@@ -139,3 +139,6 @@ sudo pip install 'python-language-server[all]'
 sudo pip install pynvim
 sudo pip install vim-vint
 ```
+
+### color
+vim -c "TSInstall cpp python java scala"

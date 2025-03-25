@@ -159,10 +159,6 @@
             "filetypes": ["dockercompose"],
             "rootPatterns": [".git", ".env", "docker-compose.yml", "compose.yml"]
         },
-        "lua": {
-            "command": "lua-lsp",
-            "filetypes": ["lua"]
-        },
         "intelephense": {
             "command": "intelephense",
             "args": ["--stdio"],
@@ -175,6 +171,11 @@
             "command": "php",
             "args": ["/path/to/vendor/felixfbecker/language-server/bin/php-language-server.php"],
             "filetypes": ["php"]
+        },
+        "lua": {
+          "command": "lua-lsp",
+          "rootPatterns": [".git"],
+          "filetypes": ["lua"]
         }
     },
     "snippets.ultisnips.pythonPrompt": false
