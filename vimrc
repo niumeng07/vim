@@ -65,15 +65,16 @@ let g:coc_filetype_map = {
   \ 'yaml.docker-compose': 'dockercompose',
   \ }
 
+" let s:lua_config_home = expand('~/.vim/lua/')
 " function LoadLuaConfig()
 "     for plugin in g:plugs_order
-"         let config_file = join([s:config_home, plugin.'.lua'], '/')
+"         let config_file = join([s:lua_config_home, plugin.'.lua'], '/')
 "         if filereadable(config_file)
-"             " lua require($plugin)
+"             lua require(plugin)
 "         endif
 "     endfor
 " endfunction
 
 " call LoadLuaConfig()
 
-" lua require("config")
+lua require("config")

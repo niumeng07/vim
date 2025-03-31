@@ -6,37 +6,38 @@ My vimrc.
 
 - [google/vim-maktaba](https://github.com/google/vim-maktaba)
 - [google/vim-glaive](https://github.com/google/vim-glaive)
-- [google/vim-codefmt](https://github.com/google/vim-codefmt)
-- [niumeng07/vim-colorschemes](https://github.com/niumeng07/vim-colorschemes)
-- [godlygeek/tabular](https://github.com/godlygeek/tabular)
-- [fatih/vim-go](https://github.com/fatih/vim-go)
-- [derekwyatt/vim-scala](https://github.com/derekwyatt/vim-scala)
-- [niumeng07/vim-snippets](https://github.com/niumeng07/vim-snippets)
-- [junegunn/fzf](https://github.com/junegunn/fzf)
-- [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim)
-- [Yggdroot/LeaderF](https://github.com/Yggdroot/LeaderF)
-- [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
-- [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
 - [Shougo/neco-vim](https://github.com/Shougo/neco-vim)
 - [neoclide/coc-neco](https://github.com/neoclide/coc-neco)
 - [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim)
-- [sheerun/vim-polyglot](https://github.com/sheerun/vim-polyglot)
-- [mg979/vim-visual-multi](https://github.com/mg979/vim-visual-multi)
-- [terryma/vim-smooth-scroll](https://github.com/terryma/vim-smooth-scroll)
-- [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
-- [voldikss/vim-floaterm](https://github.com/voldikss/vim-floaterm)
-- [vim-scripts/a.vim](https://github.com/vim-scripts/a.vim)
-- [ervandew/supertab](https://github.com/ervandew/supertab)
-- [jiangmiao/auto-pairs](https://github.com/jiangmiao/auto-pairs)
-- [github/copilot.vim](https://github.com/github/copilot.vim)
-- [scalameta/nvim-metals](https://github.com/scalameta/nvim-metals)
+- [Yggdroot/LeaderF](https://github.com/Yggdroot/LeaderF)
+- [bullets-vim/bullets.vim](https://github.com/bullets-vim/bullets.vim)
 - [codota/tabnine-nvim](https://github.com/codota/tabnine-nvim)
 - [github/copilot.vim](https://github.com/github/copilot.vim)
-- [bullets-vim/bullets.vim](https://github.com/bullets-vim/bullets.vim)
+- [ervandew/supertab](https://github.com/ervandew/supertab)
+- [derekwyatt/vim-scala](https://github.com/derekwyatt/vim-scala)
+- [fatih/vim-go](https://github.com/fatih/vim-go)
+- [scalameta/nvim-metals](https://github.com/scalameta/nvim-metals)
+- [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+- [sheerun/vim-polyglot](https://github.com/sheerun/vim-polyglot)
+- [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
+- [godlygeek/tabular](https://github.com/godlygeek/tabular)
+- [google/vim-codefmt](https://github.com/google/vim-codefmt)
+- [jiangmiao/auto-pairs](https://github.com/jiangmiao/auto-pairs)
+- [junegunn/fzf](https://github.com/junegunn/fzf)
+- [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim)
+- [mg979/vim-visual-multi](https://github.com/mg979/vim-visual-multi)
+- [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
+- [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [niumeng07/vim-colorschemes](https://github.com/niumeng07/vim-colorschemes)
+- [terryma/vim-smooth-scroll](https://github.com/terryma/vim-smooth-scroll)
+- [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
 - [tpope/vim-surround](https://github.com/tpope/vim-surround)
+- [vim-scripts/DoxygenToolkit.vim](https://github.com/vim-scripts/DoxygenToolkit.vim)
+- [vim-scripts/a.vim](https://github.com/vim-scripts/a.vim)
+- [voldikss/vim-floaterm](https://github.com/voldikss/vim-floaterm)
+- [niumeng07/vim-snippets](https://github.com/niumeng07/vim-snippets)
 - [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline)
 - [vim-airline/vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
-- [vim-scripts/DoxygenToolkit.vim](https://github.com/vim-scripts/DoxygenToolkit.vim)
 
 ## Install
 
@@ -60,6 +61,7 @@ go install github.com/stamblerre/gocode@latest
 ```sh
 brew install ripgrip  # brew install the_silver_searcher
 brew install node     # curl -sL install-node.now.sh/lts | sh
+brew install rust     # dependency of tabnine-nvim
 ```
 
 ### coc plugins
@@ -78,7 +80,7 @@ vim -c 'CocUpdateSync|q'
 ### Coc dependencies
 
 ```sh
-./coursier bootstrap \
+./third_party/coursier/coursier bootstrap \
   --java-opt -Xss4m \
   --java-opt -Xms100m \
   --java-opt -Dmetals.client=coc.nvim \
@@ -105,7 +107,6 @@ sudo make install
 
 ```sh
 brew install homebrew/cask-fonts/font-hackgen-nerd --cask
-brew tap homebrew/cask-fonts
 brew install --cask font-hack-nerd-font
 brew search '/font-.*-nerd-font/' | awk '{ print $1 }' | xargs -I{} \
       brew install --cask {} || true
@@ -122,6 +123,7 @@ to ~/.vim/third_party/format
 ### Other Language Support
 
 ```sh
+brew install lua-language-server
 npm i -g sql-language-server  # or brew install sql-language-server
 npm i -g bash-language-server # or brew install bash-language-server
 npm install -g dockerfile-language-server-nodejs
