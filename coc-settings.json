@@ -173,9 +173,9 @@
             "filetypes": ["php"]
         },
         "lua": {
-          "command": "lua-lsp",
-          "rootPatterns": [".git"],
-          "filetypes": ["lua"]
+            "command": "lua-language-server",
+            "rootPatterns": [".git"],
+            "filetypes": ["lua"]
         }
     },
     "snippets.ultisnips.pythonPrompt": false
