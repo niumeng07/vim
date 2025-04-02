@@ -1,7 +1,9 @@
 set encoding=UTF-8
 set fileencoding=utf-8
 set fileencodings=utf-8,gb2312,gbk,gb18030,cp936,ucs-bom,latin1,cp1250
-set termencoding=utf-8
+if !has('nvim')
+    set termencoding=utf-8
+endif
 
 " 按打开顺序排列窗口
 set splitright
