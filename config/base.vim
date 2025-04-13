@@ -57,7 +57,7 @@ set cursorline
 " set cursorcolumn
 set ignorecase
 set smartcase
-set nocompatible
+set nocompatible   " 禁用兼容vi的功能, 启用现代功能
 
 " 只能判断vim支持真彩色,但无法判断Terminal工具是否支持真彩色
 if has('termguicolors')

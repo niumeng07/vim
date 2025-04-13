@@ -108,11 +108,16 @@
             }
         },
         // ccls 内存泄漏,换成clangd,但是clangd需要先编译(本地开发没有编译环境)
-        //"clangd": {
-        //    "command": "clangd",
-        //    "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
-        //    "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
-        //},
+        // "clangd": {
+        //     "command": "clangd",
+        //     "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+        //     "filetypes": ["c", "cpp", "cc", "h", "hh", "hpp", "cuda", "objc", "objcpp"],
+        // },
+        // "swift": {
+        //     "command": "sourcekit-lsp",
+        //     "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+        //     "filetypes": ["swift"]
+        // },
         "digestif": {
             "command": "digestif",
             "filetypes": ["tex", "plaintex", "context"]

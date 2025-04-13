@@ -22,17 +22,6 @@ require 'nvim-treesitter.configs'.setup {
   },
 }
 
-require('tabnine').setup({
-  disable_auto_comment = true,
-  accept_keymap = "<Tab>",
-  dismiss_keymap = "<C-]>",
-  debounce_ms = 800,
-  suggestion_color = { gui = "#808080", cterm = 244 },
-  exclude_filetypes = { "TelescopePrompt", "NvimTree" },
-  log_file_path = nil, -- absolute path to tabnine log file
-  ignore_certificate_errors = false,
-})
-
 require("mason").setup({
     ui = {
         icons = {
@@ -54,3 +43,39 @@ require("conform").setup({
     javascript = { "prettierd", "prettier", stop_after_first = true },
   },
 })
+
+-- require('tabnine').setup({
+--   disable_auto_comment = true,
+--   accept_keymap = "<Tab>",
+--   dismiss_keymap = "<C-]>",
+--   debounce_ms = 800,
+--   suggestion_color = { gui = "#808080", cterm = 244 },
+--   exclude_filetypes = { "TelescopePrompt", "NvimTree" },
+--   log_file_path = nil, -- absolute path to tabnine log file
+--   ignore_certificate_errors = false,
+-- })
+
+
+-- nvim-tree 配置
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
+-- 
+-- -- optionally enable 24-bit colour
+-- vim.opt.termguicolors = true
+-- 
+-- require("nvim-tree").setup({
+--   sort = {
+--     sorter = "case_sensitive",
+--   },
+--   view = {
+--     width = 30,
+--   },
+--   renderer = {
+--     group_empty = true,
+--   },
+--   filters = {
+--     dotfiles = true,
+--   },
+-- })
+
+-- vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', { silent = true })

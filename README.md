@@ -62,6 +62,7 @@ go install github.com/stamblerre/gocode@latest
 brew install ripgrip  # brew install the_silver_searcher
 brew install node     # curl -sL install-node.now.sh/lts | sh
 brew install rust     # dependency of tabnine-nvim
+brew install black prettier prettierd stylua
 ```
 
 ### coc plugins
@@ -95,7 +96,7 @@ vim -c 'CocUpdateSync|q'
 ```sh
 cd third_party/ccls
 cmake -S. -BRelease -DCMAKE_BUILD_TYPE=Release \
-        -DCMAKE_PREFIX_PATH=$(realpath $(brew --prefix llvm))/*/lib/cmake/
+        -DCMAKE_PREFIX_PATH=$(realpath $(brew --prefix llvm))/lib/cmake/
 
 cmake --build Release
 cd Release
