@@ -1,5 +1,5 @@
 " copilot 配置
-let g:copilot_proxy = 'http://127.0.0.1:8001'
+let g:copilot_proxy = 'http://127.0.0.1:10086'
 
 imap <C-d> <Plug>(copilot-dismiss)
 
