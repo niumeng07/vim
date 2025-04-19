@@ -82,5 +82,21 @@ function! LoadPlugin(ConfigFlag)
         Plug 'vim-airline/vim-airline'
         Plug 'vim-airline/vim-airline-themes'
     endif
+
+    " 以下插件体验中
+    " easily manage external editor tooling such as LSP servers ...
+    Plug 'williamboman/mason.nvim'
+    " All the lua functions I don't want to write twice.
+    Plug 'nvim-lua/plenary.nvim'
+    " diagnostics, references, telescope results
+    Plug 'folke/trouble.nvim'
+    " Lightweight yet powerful formatter plugin for Neovim
+    Plug 'stevearc/conform.nvim'
+    " snip
+    Plug 'L3MON4D3/LuaSnip', {'do': 'make install_jsregexp'}
+
+    " completion engine plugin for neovim written in Lua
+    Plug 'hrsh7th/nvim-cmp'
+
     call plug#end()
 endfunction

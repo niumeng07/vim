@@ -77,4 +77,6 @@ let g:coc_filetype_map = {
 
 " call LoadLuaConfig()
 
-lua require("config")
+if has('nvim')
+    lua require("config")
+endif
