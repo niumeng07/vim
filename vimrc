@@ -50,6 +50,7 @@ let ConfigFlag=CalConfigFlag() | call LoadPlugin(ConfigFlag) | call LoadPlugConf
 if has('mac') || has('unix') || has('win32')
     set background=dark
     color flattened_dark
+    " color github_dark_dimmed | let g:airline_theme='tomorrow'
 endif
 
 if $TERM_PROGRAM ==# 'Apple_Terminal'
