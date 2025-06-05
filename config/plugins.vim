@@ -77,6 +77,9 @@ function! LoadPlugin(ConfigFlag)
     " popup command window
     Plug 'voldikss/vim-floaterm'
 
+    " easily manage external editor tooling such as LSP servers ...
+    Plug 'williamboman/mason.nvim'
+
     Plug 'niumeng07/vim-snippets'
     if a:ConfigFlag ==# 'normal'
         Plug 'vim-airline/vim-airline'
