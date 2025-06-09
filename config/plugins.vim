@@ -55,7 +55,7 @@ function! LoadPlugin(ConfigFlag)
     " All the lua functions I don't want to write twice.
     Plug 'nvim-lua/plenary.nvim'
 
-    " both to provide a simple and easy way to use the interface for tree-sitter 
+    " both to provide a simple and easy way to use the interface for tree-sitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'niumeng07/vim-colorschemes'
 
@@ -76,6 +76,9 @@ function! LoadPlugin(ConfigFlag)
 
     " popup command window
     Plug 'voldikss/vim-floaterm'
+
+    " easily manage external editor tooling such as LSP servers ...
+    Plug 'williamboman/mason.nvim'
 
     Plug 'niumeng07/vim-snippets'
     if a:ConfigFlag ==# 'normal'

@@ -109,9 +109,9 @@
 [submodule "plugged/auto-pairs"]
 	path = plugged/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
-[submodule "plugged/copilot.vim"]
-	path = plugged/copilot.vim
-	url = https://github.com/github/copilot.vim.git
+# [submodule "plugged/copilot.vim"]
+# 	path = plugged/copilot.vim
+# 	url = https://github.com/github/copilot.vim.git
 [submodule "plugged/tabnine-nvim"]
 	path = plugged/tabnine-nvim
 	url = https://github.com/codota/tabnine-nvim.git

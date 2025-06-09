@@ -95,7 +95,7 @@ vim -c 'CocUpdateSync|q'
 ```sh
 cd third_party/ccls
 cmake -S. -BRelease -DCMAKE_BUILD_TYPE=Release \
-        -DCMAKE_PREFIX_PATH=$(realpath $(brew --prefix llvm))/*/lib/cmake/
+        -DCMAKE_PREFIX_PATH=$(realpath $(brew --prefix llvm))/lib/cmake/
 
 cmake --build Release
 cd Release
