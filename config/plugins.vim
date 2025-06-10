@@ -55,7 +55,7 @@ function! LoadPlugin(ConfigFlag)
     " All the lua functions I don't want to write twice.
     Plug 'nvim-lua/plenary.nvim'
 
-    " both to provide a simple and easy way to use the interface for tree-sitter 
+    " both to provide a simple and easy way to use the interface for tree-sitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'niumeng07/vim-colorschemes'
 

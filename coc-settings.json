@@ -100,7 +100,7 @@
     "languageserver": {
         "ccls": {
             "command": "ccls",
-            "filetypes": ["c", "cpp", "cc", "h", "hh", "hpp", "cuda", "objc", "objcpp"],
+            "filetypes": ["c", "cpp", "cc", "h", "hh", "hpp", "cuda", "objc", "objcpp", "swift"],
             "rootPatterns": [".ccls-root", ".clang", ".ccls", ".vim/", ".git/", ".hg/", ".clang_complete", "compile_commands.json", "compile_flags.txt"],
             "initializationOptions": {
                 "cache": { "directory": "/tmp/ccls-cache" },
