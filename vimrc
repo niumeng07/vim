@@ -2,82 +2,58 @@ if v:progname =~? 'evim'
     finish
 endif
 
-" -------- 基础配置 ------------------------------------------------------
+" -------- BASEMENT -----------------------------------
 execute 'source ~/.vim/config/base.vim'
+
+" -------- CUSTOM COMMAND -----------------------------
 execute 'source ~/.vim/config/commands.vim'
+
+" -------- PLUGINS AND PLUGINS CONFIG -----------------
 execute 'source ~/.vim/config/plugins.vim'
 
 scriptencoding UTF-8
 
-function CalConfigFlag()
-    " 获取文件大小
-    let FileSize=getfsize(expand(@%))
-    if FileSize > 500 * 1024  " 大于500K
-        return 'simple'
-    endif
-    return 'normal'
+function! s:EndsWith(haystack, needle) abort
+    return strridx(a:haystack, a:needle) == (strlen(a:haystack) - strlen(a:needle))
 endfunction
 
 let s:config_home = expand('~/.vim/config/plugins')
-function LoadPlugConfig(ConfigFlag)
-    for plugin in g:plugs_order
-        if plugin ==# "vim-polyglot"
-            continue
-        endif
-        " 如果已经安装了插件，那么载入插件配置
-        if maktaba#string#EndsWith(plugin, '.vim')
-            let config_file = join([s:config_home, plugin], '/')
-        else
-            let config_file = join([s:config_home, plugin.'.vim'], '/')
-        endif
-        if filereadable(config_file)
-            execute 'source' fnameescape(config_file)
-        endif
-    endfor
 
-    if a:ConfigFlag ==# 'simple'
-        setlocal bufhidden=unload   " save memory when other file is viewed
+for plugin in g:plugs_order
+    if s:EndsWith(plugin, '.vim')
+        let config_file = join([s:config_home, plugin], '/')
+    else
+        let config_file = join([s:config_home, plugin.'.vim'], '/')
     endif
-endfunction
+    if filereadable(config_file)
+        execute 'source' fnameescape(config_file)
+    endif
+endfor
 
-let config_file = join([s:config_home, 'vim-polyglot.vim'], '/')
-execute 'source ' fnameescape(config_file)
-
-" -------- 插件安装/配置 ------------------------------------------------------
-let ConfigFlag=CalConfigFlag() | call LoadPlugin(ConfigFlag) | call LoadPlugConfig(ConfigFlag)
-
-" ------- 主题配置 -------------------------------------------------------
+" ------- COLORSCHEME ---------------------------------
 if has('mac') || has('unix') || has('win32')
     set background=dark
     color flattened_dark
-    " color github_dark_dimmed | let g:airline_theme='tomorrow'
 endif
 
 if $TERM_PROGRAM ==# 'Apple_Terminal'
-    set termguicolors! "Terminal不支持真彩色
+    set termguicolors!    " Terminal does not support true color
     color Tomorrow-Night
 endif
 
-" docker compose file language server support
+" Docker Compose Language Server Support
 au FileType yaml if bufname("%") =~# "docker-compose.yml" | set ft=yaml.docker-compose | endif
 au FileType yaml if bufname("%") =~# "compose.yml" | set ft=yaml.docker-compose | endif
 
-let g:coc_filetype_map = {
-  \ 'yaml.docker-compose': 'dockercompose',
-  \ }
-
-" let s:lua_config_home = expand('~/.vim/lua/')
-" function LoadLuaConfig()
-"     for plugin in g:plugs_order
-"         let config_file = join([s:lua_config_home, plugin.'.lua'], '/')
-"         if filereadable(config_file)
-"             lua require(plugin)
-"         endif
-"     endfor
-" endfunction
-
-" call LoadLuaConfig()
-
+" -------------- PLUGINS LUA CONFIG ------------------
 if has('nvim')
     lua require("config")
+    lua require("plug-gitsigns")
+    lua require("plug-lsp")
+    lua require("plug-mason")
+    lua require("plug-conform")
+    lua require("plug-treesitter")
+    lua require("plug-tree")
+    lua require("plug-neoscroll")
+    lua require("plug-lualine")
 endif

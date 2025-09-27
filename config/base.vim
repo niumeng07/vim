@@ -58,7 +58,9 @@ set cursorline
 set ignorecase
 set smartcase
 set nocompatible   " 禁用兼容vi的功能, 启用现代功能
-set cmdheight=0    " 隐藏cmd行
+if has('nvim')
+    set cmdheight=0    " 隐藏cmd行
+endif
 
 " 只能判断vim支持真彩色,但无法判断Terminal工具是否支持真彩色
 if has('termguicolors')
@@ -69,8 +71,6 @@ endif
 set foldenable
 set noerrorbells
 set nowrap
-" set hidden
-" set cmdheight=2
 set updatetime=300
 set shortmess+=c
 set signcolumn=yes
@@ -79,9 +79,7 @@ set completeopt=menuone,menu,longest
 set completeopt=preview,menu
 set completeopt=longest,menu
 
-if has('mac') && !has('nvim')
-    set clipboard+=unnamed   " leading to block paste error in nvim
-elseif has('nvim')
+if has('nvim')
     let $GIT_EDITOR = 'nvr -cc split --remote-wait'
     let python_host_prog='/usr/local/bin/python'
     let python3_host_prog=join([$PYTHON3_HOME, '/bin/python3.10'], '/')
@@ -119,28 +117,3 @@ else
 endif
 
 set signcolumn=yes
-
-" 滚动设置
-set mouse=a
-map <ScrollWheelUp> <C-Y>
-map <S-ScrollWheelUp> <C-U>
-map <ScrollWheelDown> <C-E>
-map <S-ScrollWheelDown> <C-D>
-
-" 光标导航设置
-inoremap <C-d> <Del>
-cnoremap <c-d> <Delete>
-
-cnoremap <c-b> <Left>
-inoremap <c-b> <Left>
-
-cnoremap <c-f> <Right>
-inoremap <c-f> <Right>
-
-inoremap <C-k> <Up>
-inoremap <C-j> <Down>
-
-inoremap <C-e> <End>
-
-inoremap <C-a> <Home>
-cnoremap <C-a> <Home>
