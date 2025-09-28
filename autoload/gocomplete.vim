@@ -1,1 +1,0 @@
-/Users/liuda/.vim/plugged/gocode/vim/autoload/gocomplete.vim
