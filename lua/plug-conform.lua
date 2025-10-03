@@ -17,5 +17,7 @@ require("conform").setup({
 		sh = { "shfmt" },
 		cpp = { "clang_format" },
 		c = { "clang_format" },
+		xml = { "xmlformatter" },
+		yaml = { "yamlfmt" },
 	},
 })
