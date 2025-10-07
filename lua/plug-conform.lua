@@ -17,5 +17,12 @@ require("conform").setup({
 		sh = { "shfmt" },
 		cpp = { "clang_format" },
 		c = { "clang_format" },
+		xml = { "xmlformatter" }, -- bin@xmlformat config@xmlformatter.py
+		yaml = { "yamlfmt" },
+	},
+	formatters = {
+		xmlformatter = {
+			prepend_args = { "--indent", "4", "--blanks" },
+		},
 	},
 })

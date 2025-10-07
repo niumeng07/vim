@@ -58,6 +58,9 @@ Plug 'kylechui/nvim-surround'
 " 自动插入和删除成对的括号、引号等
 Plug 'windwp/nvim-autopairs'
 
+" AI coding
+Plug 'github/copilot.vim'
+
 " 提供了多光标编辑功能，类似于 VS Code 或 Sublime Text
 Plug 'mg979/vim-visual-multi'
 " 用于自动创建和管理项目符号列表（bullet lists）
