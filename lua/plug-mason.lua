@@ -10,4 +10,24 @@ require("mason").setup({
 })
 
 -- mason lsp
-require("mason-lspconfig").setup({})
+local lspconfig = require("mason-lspconfig")
+
+lspconfig.setup({
+	ensure_installed = {
+		"black",
+		"clang-format",
+		"clangd",
+		"golangci-lint",
+		"isort",
+		"jq",
+		"prettier",
+		"prettierd",
+		"pyright",
+		"ruff",
+		"rustfmt",
+		"shfmt",
+		"stylua",
+		"xmlformatter",
+		"yamlfmt",
+	},
+})

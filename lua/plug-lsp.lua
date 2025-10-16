@@ -12,7 +12,7 @@ cmp.setup({
 		["<C-b>"] = cmp.mapping.scroll_docs(-4),
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
 		["<C-k>"] = cmp.mapping.complete(), -- 手动触发补全
-		["<CR>"] = cmp.mapping.confirm({ select = true }), -- 回车确认
+		-- ["<CR>"] = cmp.mapping.confirm({ select = true }), -- 回车确认
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
@@ -116,10 +116,10 @@ end, { desc = "toggle show diagnostic", force = true })
 vim.diagnostic.config({
 	signs = {
 		text = {
-			[vim.diagnostic.severity.ERROR] = "✗",
-			[vim.diagnostic.severity.WARN] = "!",
-			[vim.diagnostic.severity.INFO] = "ℹ",
-			[vim.diagnostic.severity.HINT] = "›",
+			[vim.diagnostic.severity.ERROR] = "»",
+			[vim.diagnostic.severity.WARN] = "›",
+			[vim.diagnostic.severity.INFO] = "–",
+			[vim.diagnostic.severity.HINT] = "·",
 		},
 		texthl = {
 			[vim.diagnostic.severity.ERROR] = "Error",

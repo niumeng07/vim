@@ -18,8 +18,8 @@ function! s:FloatermNewOrFind()
     endif
 endfunction
 
-nnoremap <silent> <leader>t :call <SID>FloatermNewOrFind()<CR>
-tnoremap <silent> <leader>t <C-\><C-n> :call floaterm#hide(1, 0, '')<CR>
+" nnoremap <silent> <leader>t :call <SID>FloatermNewOrFind()<CR>
+" tnoremap <silent> <leader>t <C-\><C-n> :call floaterm#hide(1, 0, '')<CR>
 
 if has('nvim')
     tnoremap <C-w><C-w> <C-\><C-n> <c-w><c-w>
