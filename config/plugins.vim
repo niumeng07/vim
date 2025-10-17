@@ -72,7 +72,7 @@ Plug 'stevearc/conform.nvim'
 Plug 'junegunn/vim-easy-align'
 
 " 生成注释，方便编写代码文档
-Plug 'danymat/neogen'
+" Plug 'danymat/neogen'
 
 " 一个功能丰富的 Lua 代码片段引擎
 Plug 'L3MON4D3/LuaSnip', {'do': 'make install_jsregexp'}
