@@ -45,6 +45,11 @@ endif
 au FileType yaml if bufname("%") =~# "docker-compose.yml" | set ft=yaml.docker-compose | endif
 au FileType yaml if bufname("%") =~# "compose.yml" | set ft=yaml.docker-compose | endif
 
+if has('nvim')
+    set scrollopt+=ver,hor
+    set scrolljump=0
+endif
+
 " -------------- PLUGINS LUA CONFIG ------------------
 if has('nvim')
     lua require("config")

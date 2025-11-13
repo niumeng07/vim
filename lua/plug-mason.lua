@@ -10,24 +10,9 @@ require("mason").setup({
 })
 
 -- mason lsp
-local lspconfig = require("mason-lspconfig")
-
-lspconfig.setup({
-	ensure_installed = {
-		"black",
-		"clang-format",
-		"clangd",
-		"golangci-lint",
-		"isort",
-		"jq",
-		"prettier",
-		"prettierd",
-		"pyright",
-		"ruff",
-		"rustfmt",
-		"shfmt",
-		"stylua",
-		"xmlformatter",
-		"yamlfmt",
-	},
-})
+vim.defer_fn(function()
+	require("mason-lspconfig").setup({
+		automatic_installation = false,
+		ensure_installed = {},
+	})
+end, 100)

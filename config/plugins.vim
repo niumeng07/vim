@@ -44,8 +44,6 @@ Plug 'niumeng07/vim-colorschemes'
 " =======================================================================
 " A File Explorer For Neovim Written In Lua
 Plug 'nvim-tree/nvim-tree.lua'
-" LeaderF，一个高效的模糊搜索工具，用于查找文件、缓冲区、最近使用文件等
-Plug 'Yggdroot/LeaderF', {'do': 'LeaderfInstallCExtension'}
 " FZF 的核心，一个通用的命令行模糊搜索工具 (是 fzf.vim 的依赖)
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " FZF 的 Vim 插件封装，提供了 :Files, :Buffers, :Ag 等方便的命令
@@ -63,8 +61,6 @@ Plug 'github/copilot.vim'
 
 " 提供了多光标编辑功能，类似于 VS Code 或 Sublime Text
 Plug 'mg979/vim-visual-multi'
-" 用于自动创建和管理项目符号列表（bullet lists）
-Plug 'bullets-vim/bullets.vim'
 " 一个轻量级但功能强大的格式化插件，可以集成各种外部格式化工具
 Plug 'stevearc/conform.nvim'
 
