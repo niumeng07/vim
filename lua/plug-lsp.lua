@@ -53,14 +53,18 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- python lsp config
-vim.lsp.config("ruff", {
+vim.lsp.config["ruff"] = {
 	init_options = {
 		settings = {},
 	},
-})
+}
 
 -- go lsp config
-require("go").setup({})
+vim.lsp.config["gopls"] = {
+	init_options = {
+		settings = {},
+	},
+}
 
 -- 根据文件类型决定启动LSP
 local lsp_config = {

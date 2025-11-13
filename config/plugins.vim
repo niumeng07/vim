@@ -17,25 +17,15 @@ Plug 'mason-org/mason-lspconfig.nvim'
 Plug 'neovim/nvim-lspconfig'
 " 通过 Tree-sitter 提供更先进、更精确的语法解析，用于改善语法高亮、缩进和代码导航
 Plug 'nvim-treesitter/nvim-treesitter', {'branch': 'main', 'do': ':TSUpdate'}
-" 提供对 Go 语言的全面支持（格式化、代码检查、调试等）
-Plug 'ray-x/go.nvim'
 " 辅助插件，用于改善 Metals (Scala 语言服务器) 与 Neovim LSP 的集成体验
 Plug 'scalameta/nvim-metals'
-" 在 C/C++ 源文件 (.c/.cpp) 和头文件 (.h/.hpp) 之间快速切换
-" Plug 'vim-scripts/a.vim', {'for': 'c,cc,cpp,h,hh,hpp'}
 
 " =======================================================================
 " 界面与美化 (UI & Aesthetics)
 " =======================================================================
 " Status Line
 Plug 'nvim-lualine/lualine.nvim'
-" 让 Neovim 的滚动变得平滑流畅
-Plug 'karb94/neoscroll.nvim'
-" 在一个浮动窗口中管理终端
-Plug 'voldikss/vim-floaterm'
 
-" 在你按下按键前缀（如<leader>）后，弹窗提示后续可用键位，帮你记忆快捷键
-Plug 'folke/which-key.nvim'
 " 一个作者收集的色彩主题方案
 Plug 'niumeng07/vim-colorschemes'
 
@@ -66,9 +56,6 @@ Plug 'stevearc/conform.nvim'
 
 " 文本对齐工具
 Plug 'junegunn/vim-easy-align'
-
-" 生成注释，方便编写代码文档
-" Plug 'danymat/neogen'
 
 " 一个功能丰富的 Lua 代码片段引擎
 Plug 'L3MON4D3/LuaSnip', {'do': 'make install_jsregexp'}

@@ -1,5 +1,4 @@
 require("nvim-surround").setup({})
-require("go").setup({})
 -- require("neogen").setup({})
 require("nvim-autopairs").setup({})
 require("luasnip.loaders.from_vscode").lazy_load()

@@ -59,6 +59,5 @@ if has('nvim')
     lua require("plug-conform")
     lua require("plug-treesitter")
     lua require("plug-tree")
-    lua require("plug-neoscroll")
     lua require("plug-lualine")
 endif
