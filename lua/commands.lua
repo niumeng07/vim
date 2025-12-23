@@ -1,8 +1,3 @@
-require("nvim-surround").setup({})
--- require("neogen").setup({})
-require("nvim-autopairs").setup({})
-require("luasnip.loaders.from_vscode").lazy_load()
-
 -- leader + v: 显示函数列表并跳转
 local function show_functions_with_fzf()
 	-- 1. 提前检查 LSP 客户端，避免不必要的计算

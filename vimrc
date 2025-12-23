@@ -52,7 +52,7 @@ endif
 
 " -------------- PLUGINS LUA CONFIG ------------------
 if has('nvim')
-    lua require("config")
+    lua require("commands")
     lua require("plug-gitsigns")
     lua require("plug-lsp")
     lua require("plug-mason")
@@ -60,4 +60,12 @@ if has('nvim')
     lua require("plug-treesitter")
     lua require("plug-tree")
     lua require("plug-lualine")
+    lua require("plug-surround")
+    lua require("plug-autopairs")
 endif
+
+" 不可见字符高亮显示
+set listchars=tab:→\ ,trail:·,nbsp:␣,extends:>,precedes:<
+set display+=uhex
+syntax match InvisibleChar /[\u00A0\u2000-\u200F\u2028\u2029\uFEFF]/
+highlight InvisibleChar ctermbg=red guibg=#ff5555

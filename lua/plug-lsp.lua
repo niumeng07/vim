@@ -79,6 +79,7 @@ local lsp_config = {
 	sh = { "shfmt" },
 	bash = { "shfmt" },
 	zsh = { "shfmt" },
+	swift = { "swiftlint" },
 }
 
 vim.api.nvim_create_autocmd("FileType", {
@@ -152,3 +153,5 @@ vim.diagnostic.config({
 		prefix = "",
 	},
 })
+
+require("luasnip.loaders.from_vscode").lazy_load()

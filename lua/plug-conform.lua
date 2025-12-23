@@ -19,6 +19,7 @@ require("conform").setup({
 		c = { "clang_format" },
 		xml = { "xmlformatter" }, -- bin@xmlformat config@xmlformatter.py
 		yaml = { "yamlfmt" },
+		swift = { "swift_format" },
 	},
 	formatters = {
 		xmlformatter = {
