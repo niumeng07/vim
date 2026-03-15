@@ -39,7 +39,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " FZF 的 Vim 插件封装，提供了 :Files, :Buffers, :Ag 等方便的命令
 Plug 'junegunn/fzf.vim'
 " Git 的 Vim 封装插件，让你可以在 Vim 内部无缝执行 Git 命令
-Plug 'tpope/vim-fugitive'
+Plug 'kdheepak/lazygit.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 " 轻松地添加、修改和删除包围符号，如括号、引号、XML 标签等
 Plug 'kylechui/nvim-surround'

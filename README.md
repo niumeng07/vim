@@ -29,7 +29,7 @@ brew search '/font-.*-nerd-font/' | awk '{ print $1 }' | xargs -I{} \
 ### Other Language Support
 
 ```sh
-vim -c "MasonInstall black clang-format clangd isort jq prettier prettierd pyright ruff rustfmt shfmt stylua"
+vim -c "MasonInstall black clang-format clangd golangci-lint gopls isort jq prettier prettierd pyright ruff rustfmt shfmt stylua swiftlint xmlformatter yamlfmt"
 ```
 
 ### colorscheme

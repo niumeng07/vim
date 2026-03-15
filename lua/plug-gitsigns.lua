@@ -47,3 +47,7 @@ require("gitsigns").setup({
 		col = 1,
 	},
 })
+
+vim.api.nvim_create_user_command("Gvd", function()
+	vim.cmd("Gitsigns diffthis")
+end, {})
