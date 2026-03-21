@@ -57,6 +57,9 @@ Plug 'stevearc/conform.nvim'
 " 文本对齐工具
 Plug 'junegunn/vim-easy-align'
 
+" Undo Tree
+Plug 'mbbill/undotree'
+
 " 一个功能丰富的 Lua 代码片段引擎
 Plug 'L3MON4D3/LuaSnip', {'do': 'make install_jsregexp'}
 " 一个现代的、模块化的 Neovim 补全引擎，可与 LSP、代码片段等多种源配合使用

@@ -17,7 +17,10 @@ require("conform").setup({
 		sh = { "shfmt" },
 		cpp = { "clang_format" },
 		c = { "clang_format" },
-		xml = { "xmlformatter" }, -- bin@xmlformat config@xmlformatter.py
+		cc = { "clang_format" },
+		h = { "clang_format" },
+		hh = { "clang_format" },
+		xml = { "xmlformatter" },
 		yaml = { "yamlfmt" },
 		swift = { "swift_format" },
 	},

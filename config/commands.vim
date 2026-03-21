@@ -1,6 +1,6 @@
 " 快捷命令
 nnoremap <C-c> : q<CR>
-inoremap <C-c> <esc>
+" inoremap <C-c> <esc>
 vnoremap <C-c> "+y
 
 command Light : set background=light | color flattened_light
