@@ -6,9 +6,6 @@ vnoremap <C-c> "+y
 command Light : set background=light | color flattened_light
 command Dark : set background=dark | color flattened_dark
 
-" command ClipAdd : set clipboard+=unnamed
-" command ClipRmv : set clipboard-=unnamed
-
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 
 map Q gq
@@ -48,3 +45,7 @@ inoremap <C-e> <End>
 
 inoremap <C-a> <Home>
 cnoremap <C-a> <Home>
+
+" 交换两处文本
+" v -> 选中第一处文本 -> d(删除) -> v -> 选中第二处文本 -> <leader>x 完成交换
+vnoremap <leader>x <ESC>`.``gvp``P

@@ -2,22 +2,39 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 
+local has_words_before = function()
+	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+	if col == 0 then
+		return false
+	end
+	local text = vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]
+	return text:sub(col, col):match("%s") == nil
+end
+
 cmp.setup({
+	completion = {
+		autocomplete = {
+			cmp.TriggerEvent.InsertEnter,
+			cmp.TriggerEvent.TextChanged,
+		},
+	},
 	snippet = {
 		expand = function(args)
-			luasnip.lsp_expand(args.body) -- 使用 LuaSnip 扩展片段
+			luasnip.lsp_expand(args.body)
 		end,
 	},
 	mapping = cmp.mapping.preset.insert({
 		["<C-b>"] = cmp.mapping.scroll_docs(-4),
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
 		["<C-k>"] = cmp.mapping.complete(), -- 手动触发补全
-		-- ["<CR>"] = cmp.mapping.confirm({ select = true }), -- 回车确认
+		["<CR>"] = cmp.mapping.confirm({ select = false }),
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
 			elseif luasnip.expand_or_jumpable() then
 				luasnip.expand_or_jump()
+			elseif has_words_before() then
+				cmp.complete()
 			else
 				fallback()
 			end
@@ -31,74 +48,31 @@ cmp.setup({
 				fallback()
 			end
 		end, { "i", "s" }),
+		["<C-e>"] = cmp.mapping(function()
+			vim.api.nvim_feedkeys(
+				vim.fn["copilot#Accept"](vim.api.nvim_replace_termcodes("<Tab>", true, true, true)),
+				"i",
+				true
+			)
+		end),
 	}),
+	experimental = {
+		ghost_text = true,
+	},
+	-- complete sources
 	sources = cmp.config.sources({
-		{ name = "nvim_lsp" }, -- complete from LSP
-		{ name = "luasnip" }, -- complete from Snippets
-		{ name = "buffer" }, -- complete from buffer
-		{ name = "path" }, -- complete from path
+		-- { name = "copilot" },
+		{ name = "nvim_lsp" },
+		{ name = "luasnip" },
+		{ name = "path" },
+		{ name = "buffer", keyword_length = 3 },
 	}),
-})
-
--- scala lsp config
-local metals_config = require("metals").bare_config()
-
-local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "scala", "sbt", "java" },
-	callback = function()
-		require("metals").initialize_or_attach(metals_config)
-	end,
-	group = nvim_metals_group,
-})
-
--- python lsp config
-vim.lsp.config["ruff"] = {
-	init_options = {
-		settings = {},
-	},
-}
-
--- go lsp config
-vim.lsp.config["gopls"] = {
-	init_options = {
-		settings = {},
-	},
-}
-
--- 根据文件类型决定启动LSP
-local lsp_config = {
-	python = { "pyright", "ruff" },
-	c = { "clangd", "clang_format" },
-	cpp = { "clangd", "clang_format" },
-	h = { "clangd", "clang_format" },
-	hh = { "clangd", "clang_format" },
-	hpp = { "clangd", "clang_format" },
-	go = { "gopls", "go" },
-	scala = { "scalafmt" },
-	sh = { "shfmt" },
-	bash = { "shfmt" },
-	zsh = { "shfmt" },
-	swift = { "swiftlint" },
-}
-
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "*",
-	callback = function()
-		local ft = vim.bo.filetype
-		local servers = lsp_config[ft]
-		if servers then
-			for _, server in ipairs(servers) do
-				vim.lsp.enable(server)
-			end
-		end
-	end,
 })
 
 -- custom command: go to definition/declaration
-vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "C-]", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { silent = true })
+vim.keymap.set("n", "<C-]>", vim.lsp.buf.definition, { silent = true })
+vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { silent = true })
 
 -- custom command: mannully formatcode
 vim.keymap.set("n", "<leader>f", function()
@@ -111,7 +85,7 @@ vim.diagnostic.enable(false)
 -- custom command: toggle diagnostic
 vim.api.nvim_create_user_command("DiagnosticToggle", function()
 	if vim.diagnostic.is_enabled() then
-		vim.diagnostic.disable()
+		vim.diagnostic.enable(false)
 	else
 		vim.diagnostic.enable()
 	end
@@ -142,7 +116,7 @@ vim.diagnostic.config({
 	virtual_text = true,
 	underline = false,
 
-	update_in_insert = true,
+	update_in_insert = false,
 	severity_sort = true,
 	float = {
 		focusable = true,
@@ -155,3 +129,50 @@ vim.diagnostic.config({
 })
 
 require("luasnip.loaders.from_vscode").lazy_load()
+
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+-- python lsp config
+-- vim.lsp.config("ruff", {
+-- 	capabilities = capabilities,
+-- 	init_options = {
+-- 		settings = {},
+-- 	},
+-- })
+
+-- go lsp config
+vim.lsp.config("gopls", {
+	capabilities = capabilities,
+	init_options = {
+		settings = {},
+	},
+})
+
+-- python lsp config
+vim.lsp.config("pyright", {
+	capabilities = capabilities,
+})
+
+-- c/c++ lsp config
+vim.lsp.config("clangd", {
+	capabilities = capabilities,
+})
+
+-- python scala config
+vim.lsp.config("metals", {
+	capabilities = capabilities,
+	init_options = {
+		settings = {},
+	},
+})
+
+vim.api.nvim_create_autocmd("TextChangedI", {
+	callback = function()
+		local cmp = require("cmp")
+		if not cmp.visible() then
+			cmp.complete()
+		end
+	end,
+})
+
+vim.lsp.enable({ "pyright", "clangd", "gopls", "metals" })

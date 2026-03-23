@@ -66,6 +66,6 @@ endif
 
 " 不可见字符高亮显示
 set listchars=tab:→\ ,trail:·,nbsp:␣,extends:>,precedes:<
-set display+=uhex
+" set display+=uhex  " 把不可见字符显示为Unicode
 syntax match InvisibleChar /[\u00A0\u2000-\u200F\u2028\u2029\uFEFF]/
 highlight InvisibleChar ctermbg=red guibg=#ff5555
