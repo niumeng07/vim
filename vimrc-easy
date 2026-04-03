@@ -21,6 +21,7 @@ set tabstop=4 softtabstop=4 shiftwidth=4
 
 augroup Base
     autocmd FileType cpp,c,h,hpp set sw=4 ts=4
+    autocmd CursorMovedI,InsertLeave * if pumvisible() == 0 | silent! pclose | endif
 augroup END
 
 set sw=4 ts=4
@@ -67,10 +68,6 @@ augroup END
 
 augroup Scala
     autocmd BufRead,BufNewFile *.sbt set filetype=scala
-augroup END
-
-augroup Base
-    autocmd CursorMovedI,InsertLeave * if pumvisible() == 0 | silent! pclose | endif
 augroup END
 
 if has('autocmd')

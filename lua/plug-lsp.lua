@@ -132,14 +132,6 @@ require("luasnip.loaders.from_vscode").lazy_load()
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
--- python lsp config
--- vim.lsp.config("ruff", {
--- 	capabilities = capabilities,
--- 	init_options = {
--- 		settings = {},
--- 	},
--- })
-
 -- go lsp config
 vim.lsp.config("gopls", {
 	capabilities = capabilities,
@@ -151,6 +143,16 @@ vim.lsp.config("gopls", {
 -- python lsp config
 vim.lsp.config("pyright", {
 	capabilities = capabilities,
+	settings = {
+		python = {
+			pythonPath = "/opt/homebrew/bin/python3.10",
+			analysis = {
+				autoSearchPaths = true,
+				diagnosticMode = "openFilesOnly",
+				useLibraryCodeForTypes = true,
+			},
+		},
+	},
 })
 
 -- c/c++ lsp config
@@ -158,8 +160,15 @@ vim.lsp.config("clangd", {
 	capabilities = capabilities,
 })
 
--- python scala config
+-- scala lsp config
 vim.lsp.config("metals", {
+	capabilities = capabilities,
+	init_options = {
+		settings = {},
+	},
+})
+
+vim.lsp.config("sqlls", {
 	capabilities = capabilities,
 	init_options = {
 		settings = {},
@@ -168,11 +177,41 @@ vim.lsp.config("metals", {
 
 vim.api.nvim_create_autocmd("TextChangedI", {
 	callback = function()
-		local cmp = require("cmp")
-		if not cmp.visible() then
+		local line = vim.api.nvim_get_current_line()
+		local col = vim.fn.col(".") - 1
+		local char = line:sub(col, col)
+		if char:match("[%.%:]") then
 			cmp.complete()
 		end
 	end,
 })
 
-vim.lsp.enable({ "pyright", "clangd", "gopls", "metals" })
+vim.lsp.config("sourcekit", {
+	cmd = { "xcrun", "sourcekit-lsp" },
+})
+
+vim.lsp.config("lua_ls", {
+	settings = {
+		Lua = {
+			codeLens = {
+				enable = true,
+			},
+			hint = {
+				enable = true,
+				semicolon = "Disable",
+			},
+		},
+	},
+})
+
+vim.lsp.enable({
+	"pyright",
+	"clangd",
+	"gopls",
+	"metals",
+	"sourcekit",
+	"docker_language_server",
+	"bashls",
+	"lua_ls",
+    "sqlls",
+})
