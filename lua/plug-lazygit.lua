@@ -1,7 +1,3 @@
-vim.api.nvim_create_user_command("Gvd", function()
-	vim.cmd("Gitsigns diffthis")
-end, {})
-
 vim.api.nvim_create_user_command("Git", function()
 	vim.cmd("LazyGit")
 end, {})

@@ -36,6 +36,11 @@ require("nvim-tree").setup({
 	view = {
 		width = 30,
 	},
+	actions = {
+		open_file = {
+			quit_on_open = true,
+		},
+	},
 	renderer = {
 		group_empty = true,
 		hidden_display = "all",
@@ -60,7 +65,7 @@ require("nvim-tree").setup({
 		enable = false,
 	},
 	git = {
-		enable = false, -- hide git status of files
-		show_on_dirs = false, -- hide status of children files on dir
+		enable = true, -- hide git status of files
+		show_on_dirs = true, -- hide status of children files on dir
 	},
 })

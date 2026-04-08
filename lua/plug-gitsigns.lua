@@ -48,6 +48,14 @@ require("gitsigns").setup({
 	},
 })
 
-vim.api.nvim_create_user_command("Gvd", function()
-	vim.cmd("Gitsigns diffthis")
-end, {})
+vim.api.nvim_create_user_command("Gvd", function(opts)
+	local commit = opts.args
+
+	if commit == "" then
+		vim.cmd("Gitsigns diffthis")
+	else
+		vim.cmd("Gitsigns diffthis " .. commit)
+	end
+end, {
+	nargs = "?",
+})

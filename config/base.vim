@@ -24,16 +24,14 @@ augroup Base
     set number relativenumber
     autocmd InsertEnter * :set norelativenumber number
     autocmd InsertLeave * :set relativenumber
+    autocmd FileType cpp,c,h,hpp set sw=4 ts=4
+    autocmd CursorMovedI,InsertLeave * if pumvisible() == 0 | silent! pclose | endif
 augroup END
 
 set backspace=indent,eol,start
 set history=50
 set cinoptions+=g0
 set tabstop=4 softtabstop=4 shiftwidth=4
-
-augroup Base
-    autocmd FileType cpp,c,h,hpp set sw=4 ts=4
-augroup END
 
 set sw=4 ts=4
 
@@ -73,11 +71,8 @@ set noerrorbells
 set nowrap
 set updatetime=300
 set shortmess+=c
-set signcolumn=yes
 
-set completeopt=menuone,menu,longest
-set completeopt=preview,menu
-set completeopt=longest,menu
+set completeopt=menuone,menu,longest,preview
 
 if has('nvim')
     let $GIT_EDITOR = 'nvr -cc split --remote-wait'
@@ -99,10 +94,6 @@ augroup END
 
 augroup Scala
     autocmd BufRead,BufNewFile *.sbt set filetype=scala
-augroup END
-
-augroup Base
-    autocmd CursorMovedI,InsertLeave * if pumvisible() == 0 | silent! pclose | endif
 augroup END
 
 if has('autocmd')

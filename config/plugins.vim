@@ -75,4 +75,7 @@ Plug 'hrsh7th/cmp-path'         " 路径补全
 Plug 'hrsh7th/cmp-cmdline'      " 命令行补全
 Plug 'saadparwaiz1/cmp_luasnip' " LuaSnip 片段补全
 
+" 图像显示
+Plug '3rd/image.nvim'
+
 call plug#end() " 结束 vim-plug 配置块
