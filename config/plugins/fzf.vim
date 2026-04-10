@@ -1,12 +1,7 @@
 " fzf
+nnoremap <silent> <leader>ff :Files<CR>
 
-if has('nvim')
-    nnoremap <C-p> : Files <CR>
-else
-    nnoremap <C-p> : Files <CR>
-endif
-
-let g:fzf_colors = { 
+let g:fzf_colors = {
   \ 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
   \ 'hl':      ['fg', 'Comment'],

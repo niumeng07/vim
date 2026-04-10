@@ -17,7 +17,7 @@ require("nvim-treesitter").install({
 	"go",
 	"bash",
 	"dockerfile",
-	"markdown",
+	-- "markdown",
 })
 
 -- treesitter highlight
@@ -36,7 +36,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		"go",
 		"bash",
 		"dockerfile",
-		"markdown",
+		-- "markdown",
 	},
 	callback = function()
 		vim.treesitter.start()

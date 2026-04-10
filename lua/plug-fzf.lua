@@ -99,6 +99,6 @@ local function show_functions_with_fzf()
 	end)
 end
 
-vim.keymap.set("n", "<leader>v", show_functions_with_fzf, { desc = "Show functions with FZF" })
+-- vim.keymap.set("n", "<leader>v", show_functions_with_fzf, { desc = "Show functions with FZF" })
 
--- vim.lsp.log.set_level("debug")
+vim.lsp.log.set_level("debug")

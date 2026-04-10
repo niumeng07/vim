@@ -52,7 +52,6 @@ endif
 
 " -------------- PLUGINS LUA CONFIG ------------------
 if has('nvim')
-    lua require("commands")
     lua require("plug-gitsigns")
     lua require("plug-lsp")
     lua require("plug-mason")
@@ -60,8 +59,9 @@ if has('nvim')
     lua require("plug-treesitter")
     lua require("plug-tree")
     lua require("plug-lualine")
-    lua require("plug-surround")
-    lua require("plug-autopairs")
+    lua require("plug-telescope")
+    lua require("plug-fzf")
+    lua require("plug-mini")
 endif
 
 " 不可见字符高亮显示

@@ -215,3 +215,5 @@ vim.lsp.enable({
 	"lua_ls",
     "sqlls",
 })
+
+vim.lsp.semantic_tokens.enable(true, { bufnr = bufnr })

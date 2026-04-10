@@ -38,24 +38,24 @@ Plug 'nvim-tree/nvim-tree.lua'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " FZF 的 Vim 插件封装，提供了 :Files, :Buffers, :Ag 等方便的命令
 Plug 'junegunn/fzf.vim'
+
+" 当前我仅用于显示functions, 其功能很强大
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim'
+
 " Git 的 Vim 封装插件，让你可以在 Vim 内部无缝执行 Git 命令
 Plug 'kdheepak/lazygit.nvim'
 Plug 'lewis6991/gitsigns.nvim'
-" 轻松地添加、修改和删除包围符号，如括号、引号、XML 标签等
-Plug 'kylechui/nvim-surround'
-" 自动插入和删除成对的括号、引号等
-Plug 'windwp/nvim-autopairs'
+" 一个工具集合
+Plug 'nvim-mini/mini.nvim'
 
 " AI coding
 Plug 'github/copilot.vim'
 
-" 提供了多光标编辑功能，类似于 VS Code 或 Sublime Text
+" 提供了多光标编辑功能
 Plug 'mg979/vim-visual-multi'
 " 一个轻量级但功能强大的格式化插件，可以集成各种外部格式化工具
 Plug 'stevearc/conform.nvim'
-
-" 文本对齐工具
-Plug 'junegunn/vim-easy-align'
 
 " Undo Tree
 Plug 'mbbill/undotree'
@@ -74,8 +74,5 @@ Plug 'hrsh7th/cmp-buffer'       " buffer 补全
 Plug 'hrsh7th/cmp-path'         " 路径补全
 Plug 'hrsh7th/cmp-cmdline'      " 命令行补全
 Plug 'saadparwaiz1/cmp_luasnip' " LuaSnip 片段补全
-
-" 图像显示
-Plug '3rd/image.nvim'
 
 call plug#end() " 结束 vim-plug 配置块
