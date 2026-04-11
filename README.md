@@ -3,8 +3,14 @@
 ## Install
 
 ```sh
-cd ~ && mv .vim .vim.bak && git clone https://github.com/niumeng07/vim.git .vim --recursive
-vim +PlugInstall
+brew install ripgrip git rust fzf
+
+cd ~
+mv .vim .vim.bak
+
+git clone https://github.com/niumeng07/vim.git .vim --recursive
+
+ln -sf ~/.vim ~/.config/nvim
 ```
 
 ## third-party
@@ -12,7 +18,7 @@ vim +PlugInstall
 ### tools
 
 ```sh
-brew install ripgrip
+brew install autojump
 brew install coursier
 coursier install scalafmt
 ```
@@ -20,23 +26,10 @@ coursier install scalafmt
 ### font
 
 ```sh
-brew install homebrew/cask-fonts/font-hackgen-nerd --cask
 brew install --cask font-hack-nerd-font
 brew search '/font-.*-nerd-font/' | awk '{ print $1 }' | xargs -I{} \
       brew install --cask {} || true
 ```
-
-### Other Language Support
-
-```sh
-vim -c "MasonInstall black clang-format clangd golangci-lint gopls isort jq prettier prettierd pyright ruff rustfmt shfmt stylua swiftlint xmlformatter yamlfmt"
-```
-
-### colorscheme
-```sh
-vim -c "TSInstall cpp python java scala"
-```
-
 
 
 <img width="1512" height="932" alt="4" src="https://github.com/user-attachments/assets/94494f2a-4e68-4503-9fb3-5011992c16b1" />

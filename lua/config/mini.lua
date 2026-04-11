@@ -40,6 +40,9 @@ local starter_opts = { buffer = true, nowait = true }
 
 starter.setup({
 	evaluate_single = true,
+	mappings = {
+		enew_buffer = "i",
+	},
 	items = {
 		starter.sections.builtin_actions(),
 		starter.sections.recent_files(10, false),
@@ -63,6 +66,11 @@ starter.setup({
 			end)
 			map("k", function()
 				starter.update_current_item("prev")
+			end)
+			map("i", function()
+                -- 注意这里是enew函数，不知道为什么，运行formatter会被修改为new函数
+                vim.cmd.enew()
+                vim.cmd.startinsert()
 			end)
 
 			map("<C-n>", function()

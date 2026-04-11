@@ -15,7 +15,7 @@ autocmd BufWritePre,BufRead *.c,*.cc,*.cpp,*.h,*.hh,*.hpp,*.go,*.java,*.scala
 
 function BracketsEnter(endchar)
     if getline('.')[col('.')-1] == a:endchar
-        return "\<Enter>\<Tab>\<Esc>mpa\<Enter>\<Esc>`pa" 
+        return "\<Enter>\<Tab>\<Esc>mpa\<Enter>\<Esc>`pa"
     else
         return "\<Enter>"
     endif

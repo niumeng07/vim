@@ -62,17 +62,13 @@ Plug 'mbbill/undotree'
 
 " 一个功能丰富的 Lua 代码片段引擎
 Plug 'L3MON4D3/LuaSnip', {'do': 'make install_jsregexp'}
-" 一个现代的、模块化的 Neovim 补全引擎，可与 LSP、代码片段等多种源配合使用
-Plug 'hrsh7th/nvim-cmp'
+" 补全引擎
+Plug 'saghen/blink.cmp', {'do': 'cargo build --release', 'tag': '1.*'}
+
 " 用一个漂亮的悬浮窗或列表来展示诊断信息、LSP 引用、Quickfix 列表等
 Plug 'folke/trouble.nvim'
 
 " 补全源
 Plug 'rafamadriz/friendly-snippets'
-Plug 'hrsh7th/cmp-nvim-lsp'     " LSP 补全
-Plug 'hrsh7th/cmp-buffer'       " buffer 补全
-Plug 'hrsh7th/cmp-path'         " 路径补全
-Plug 'hrsh7th/cmp-cmdline'      " 命令行补全
-Plug 'saadparwaiz1/cmp_luasnip' " LuaSnip 片段补全
 
 call plug#end() " 结束 vim-plug 配置块

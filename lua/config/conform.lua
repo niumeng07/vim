@@ -35,3 +35,8 @@ require("conform").setup({
 	notify_on_error = true,
 	notify_no_formatters = true,
 })
+
+-- custom command: mannully formatcode
+vim.keymap.set("n", "<leader>f", function()
+	require("conform").format({ async = true, lsp_fallback = true })
+end)

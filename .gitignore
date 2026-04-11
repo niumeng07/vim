@@ -7,3 +7,4 @@ sessions
 .DS_Store
 .vim
 plugged
+lazy-lock.json
