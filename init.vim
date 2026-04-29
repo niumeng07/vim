@@ -25,6 +25,10 @@ endif
 if has('nvim') && (has('mac') || has('unix') || has('win32'))
     set background=dark
     color flattened_dark
+
+    " nvim默认的variable颜色太亮，调整
+    lua vim.api.nvim_set_hl(0, "@variable.lua", { fg="#719e07" })
+    lua vim.api.nvim_set_hl(0, "@variable.member.lua", { fg="#959595" })
 endif
 
 if has('nvim') && $TERM_PROGRAM ==# 'Apple_Terminal'

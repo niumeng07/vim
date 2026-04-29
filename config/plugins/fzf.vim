@@ -1,5 +1,9 @@
 " fzf
-nnoremap <silent> <leader>ff :Files<CR>
+if has('nvim')
+    nnoremap <silent> <leader>ff <cmd>Files<CR>
+else
+    nnoremap <silent> <leader>ff :Files<CR>
+endif
 
 let g:fzf_colors = {
   \ 'fg':      ['fg', 'Normal'],
@@ -27,4 +31,8 @@ endfunction
 
 command! -nargs=* -bang MyLiveRg call s:LiveGrep(<q-args>, <bang>0)
 
-nnoremap <silent><leader>rg :MyLiveRg<CR>
+if has('nvim')
+    nnoremap <silent><leader>rg <cmd>MyLiveRg<CR>
+else
+    nnoremap <silent> <leader>ff :MyLiveRg<CR>
+endif

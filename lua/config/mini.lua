@@ -68,9 +68,9 @@ starter.setup({
 				starter.update_current_item("prev")
 			end)
 			map("i", function()
-                -- 注意这里是enew函数，不知道为什么，运行formatter会被修改为new函数
-                vim.cmd.enew()
-                vim.cmd.startinsert()
+				-- 注意这里是enew函数，不知道为什么，运行formatter会被修改为new函数
+				vim.cmd.enew()
+				vim.cmd.startinsert()
 			end)
 
 			map("<C-n>", function()
