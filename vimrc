@@ -18,11 +18,6 @@ syntax on
 
 set fileformats=unix,dos
 
-set backspace=indent,eol,start
-set history=50
-set cinoptions+=g0
-set tabstop=4 softtabstop=4 shiftwidth=4
-
 augroup Base
     set number relativenumber
     autocmd InsertEnter * :set norelativenumber number

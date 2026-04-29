@@ -1,5 +1,9 @@
 " fzf
-nnoremap <silent> <leader>ff :Files<CR>
+if has('nvim')
+    nnoremap <silent> <leader>ff <cmd>Files<CR>
+else
+    nnoremap <silent> <leader>ff :Files<CR>
+endif
 
 let g:fzf_colors = {
   \ 'fg':      ['fg', 'Normal'],
@@ -19,12 +23,32 @@ let g:fzf_colors = {
 
 function! s:LiveGrep(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case --hidden --glob "!.git" --glob "!.ccls-cache" -- %s || true'
+
   let initial_command = printf(command_fmt, shellescape(a:query))
   let reload_command = printf(command_fmt, '{q}')
-  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
-  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+
+  let spec = {
+        \ 'options': [
+        \ '--phony',
+        \ '--query', a:query,
+        \ '--bind',
+        \ 'change:reload:sleep 0.1;'.reload_command,
+        \ '--preview-window=right:40%:wrap'
+        \ ]
+        \ }
+
+  call fzf#vim#grep(
+        \ initial_command,
+        \ 1,
+        \ fzf#vim#with_preview(spec),
+        \ a:fullscreen
+        \ )
 endfunction
 
 command! -nargs=* -bang MyLiveRg call s:LiveGrep(<q-args>, <bang>0)
 
-nnoremap <silent><leader>rg :MyLiveRg<CR>
+if has('nvim')
+    nnoremap <silent><leader>rg <cmd>MyLiveRg<CR>
+else
+    nnoremap <silent> <leader>ff :MyLiveRg<CR>
+endif

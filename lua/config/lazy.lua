@@ -35,12 +35,10 @@ lazy.setup({
 		build = "./install --bin",
 	},
 	{ "junegunn/fzf.vim" },
+	{ "nvim-telescope/telescope.nvim" },
 	{
-		"nvim-telescope/telescope.nvim",
-		dependencies = {
-			"nvim-telescope/telescope-fzf-native.nvim",
-			build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release --target install",
-		},
+		"nvim-telescope/telescope-fzf-native.nvim",
+		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release --target install",
 	},
 	{ "kdheepak/lazygit.nvim" },
 	{ "lewis6991/gitsigns.nvim" },
@@ -49,17 +47,6 @@ lazy.setup({
 		version = false,
 	},
 	{ "github/copilot.vim" },
-	-- {
-	-- 	"zbirenbaum/copilot.lua",
-	-- 	requires = {
-	-- 		"copilotlsp-nvim/copilot-lsp",
-	-- 	},
-	-- 	cmd = "Copilot",
-	-- 	event = "InsertEnter",
-	-- 	config = function()
-	-- 		require("copilot").setup({})
-	-- 	end,
-	-- },
 	{ "mg979/vim-visual-multi" },
 	{ "stevearc/conform.nvim" },
 	{ "mbbill/undotree" },
@@ -69,7 +56,10 @@ lazy.setup({
 	},
 	{
 		"saghen/blink.cmp",
-		build = "cargo build --release",
+		build = function()
+			require('blink.cmp').build():wait(60000)
+		end,
+		dependencies = { 'saghen/blink.lib' },
 	},
 	{ "folke/trouble.nvim" },
 	{ "rafamadriz/friendly-snippets" },

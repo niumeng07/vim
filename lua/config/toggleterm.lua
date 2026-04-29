@@ -1,4 +1,6 @@
-require("toggleterm").setup({
+local toggleterm_api = require("toggleterm")
+
+toggleterm_api.setup({
 	size = 20,
 	hide_numbers = true,
 	shade_filetypes = {},
@@ -38,5 +40,5 @@ require("toggleterm").setup({
 })
 
 vim.keymap.set("n", "<leader>t", function()
-	require("toggleterm").toggle()
+	toggleterm_api.toggle()
 end)

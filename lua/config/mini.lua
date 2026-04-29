@@ -23,17 +23,56 @@ require("mini.align").setup({
 
 require("mini.ai").setup()
 
--- local starter = require("mini.starter")
---
--- starter.setup({
--- 	items = {
--- 		starter.sections.telescope(),
--- 	},
--- 	content_hooks = {
--- 		starter.gen_hook.adding_bullet(),
--- 		starter.gen_hook.aligning("center", "center"),
--- 	},
--- })
+local sessions = require("mini.sessions")
+
+sessions.setup({
+	autoread = false,
+	autowrite = true,
+	directory = vim.fn.stdpath("data") .. "/sessions",
+	options = { "buffers", "curdir", "tabpages", "winsize" },
+})
+
+local function session_name()
+	return vim.fn.getcwd():gsub("/", "%%")
+end
+
+vim.api.nvim_create_user_command("MiniSessionsWrite", function()
+	local name = session_name()
+	sessions.write(name)
+end, { desc = "Write MiniSession" })
+
+vim.api.nvim_create_user_command("MiniSessionsLoad", function()
+	local name = session_name()
+	sessions.read(name)
+end, { desc = "Load MiniSession" })
+
+vim.api.nvim_create_user_command("MiniSessionsDel", function(opts)
+	local name = opts.args ~= "" and opts.args or session_name()
+	sessions.delete(name)
+end, { desc = "Delete MiniSession", nargs = "?", })
+
+local function git_session_name()
+	local git_root = vim.fs.root(0, ".git")
+
+	if not git_root then
+		return nil
+	end
+
+	return git_root:gsub("/", "%%")
+end
+
+vim.api.nvim_create_autocmd("VimLeavePre", {
+	callback = function()
+		local name = git_session_name()
+		if not name then
+			return
+		end
+
+		pcall(function()
+			sessions.write(name)
+		end)
+	end,
+})
 
 local starter = require("mini.starter")
 local starter_opts = { buffer = true, nowait = true }
@@ -68,9 +107,9 @@ starter.setup({
 				starter.update_current_item("prev")
 			end)
 			map("i", function()
-                -- 注意这里是enew函数，不知道为什么，运行formatter会被修改为new函数
-                vim.cmd.enew()
-                vim.cmd.startinsert()
+				-- 注意这里是enew函数，不知道为什么，运行formatter会被修改为new函数
+				vim.cmd.enew()
+				vim.cmd.startinsert()
 			end)
 
 			map("<C-n>", function()
@@ -85,5 +124,3 @@ starter.setup({
 	},
 	query_updaters = "abcdefgimnopqrstuvwxyz0123456789_-.",
 })
-
-require("mini.sessions").setup()

@@ -1,31 +1,30 @@
--- nvim-tree
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
 
-local function main_attatch(bufnr)
-	local api = require("nvim-tree.api")
+tree_api = require("nvim-tree.api")
 
+local function main_attatch(bufnr)
 	local function opts(desc)
 		return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
 	end
 
 	-- default mappings
-	api.config.mappings.default_on_attach(bufnr)
+	tree_api.config.mappings.default_on_attach(bufnr)
 
 	-- custom mappings
-	-- vim.keymap.set("n", "<C-t>", api.tree.change_root_to_parent, opts("Up"))
-	vim.keymap.set("n", "?", api.tree.toggle_help, opts("Help"))
-	vim.keymap.set("n", "l", api.node.open.edit, opts("Open"))
-	vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Close Directory"))
-	vim.keymap.set("n", "<C-o>", api.node.open.vertical, opts("Open Vertical"))
+	-- vim.keymap.set("n", "<C-t>", tree_api.tree.change_root_to_parent, opts("Up"))
+	vim.keymap.set("n", "?", tree_api.tree.toggle_help, opts("Help"))
+	vim.keymap.set("n", "l", tree_api.node.open.edit, opts("Open"))
+	vim.keymap.set("n", "h", tree_api.node.navigate.parent_close, opts("Close Directory"))
+	vim.keymap.set("n", "<C-o>", tree_api.node.open.vertical, opts("Open Vertical"))
 	vim.keymap.del("n", "<C-e>", { buffer = bufnr }) -- delete C-e as "Open in place" which is default
 end
 
 vim.keymap.set("n", "<leader>e", function()
-	require("nvim-tree.api").tree.toggle()
+	tree_api.tree.toggle()
 end)
 
 require("nvim-tree").setup({

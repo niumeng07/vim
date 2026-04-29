@@ -1,12 +1,14 @@
-require("conform").setup({
+local conform_api = require("conform")
+
+conform_api.setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 		go = { "goimports", "gofmt" },
 		python = function(bufnr)
-			if require("conform").get_formatter_info("ruff_format", bufnr).available then
+			if conform_api.get_formatter_info("ruff_format", bufnr).available then
 				return { "ruff_format" } -- ruff is a rust powered linter and code formatter
 			else
-				return { "isort", "black" } -- black is an uncompromising code fomatter
+				return { "isort", "black" } -- black is an uncompromising code formatter
 			end
 		end,
 		rust = { "rustfmt", lsp_format = "fallback" },
@@ -38,5 +40,5 @@ require("conform").setup({
 
 -- custom command: mannully formatcode
 vim.keymap.set("n", "<leader>f", function()
-	require("conform").format({ async = true, lsp_fallback = true })
+	conform_api.format({ async = true, lsp_fallback = true })
 end)

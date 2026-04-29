@@ -1,5 +1,6 @@
--- treesitter
-require("nvim-treesitter").setup({
+treesitter_api = require("nvim-treesitter")
+
+treesitter_api.setup({
 	highlight = {
 		enable = true,
 		additional_vim_regex_highlighting = false,
