@@ -27,6 +27,7 @@ if has('nvim') && (has('mac') || has('unix') || has('win32'))
     color flattened_dark
 
     " nvim默认的variable颜色太亮，调整
+    lua vim.api.nvim_set_hl(0, "@variable", { fg="#959595" })
     lua vim.api.nvim_set_hl(0, "@variable.lua", { fg="#719e07" })
     lua vim.api.nvim_set_hl(0, "@variable.member.lua", { fg="#959595" })
 endif
