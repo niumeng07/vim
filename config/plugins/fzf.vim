@@ -50,5 +50,5 @@ command! -nargs=* -bang MyLiveRg call s:LiveGrep(<q-args>, <bang>0)
 if has('nvim')
     nnoremap <silent><leader>rg <cmd>MyLiveRg<CR>
 else
-    nnoremap <silent> <leader>ff :MyLiveRg<CR>
+    nnoremap <silent> <leader>rg :MyLiveRg<CR>
 endif
