@@ -3,6 +3,8 @@ nnoremap <C-c> : q<CR>
 " inoremap <C-c> <esc>
 vnoremap <C-c> "+y
 
+nnoremap <C-p> "+p
+
 command Light : set background=light | color flattened_light
 command Dark : set background=dark | color flattened_dark
 
