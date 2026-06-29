@@ -37,7 +37,7 @@ set sw=4 ts=4
 
 set smarttab
 set nobackup nowritebackup
-set smartindent
+" set smartindent  " 通过LSP
 set linebreak
 set fo+=mB
 set sm
@@ -69,7 +69,7 @@ endif
 set foldenable
 set noerrorbells
 set nowrap
-set updatetime=300
+set updatetime=1000
 set shortmess+=c
 
 set completeopt=menuone,menu,longest,preview

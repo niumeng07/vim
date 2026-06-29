@@ -34,12 +34,9 @@ vim.keymap.set("n", "<leader>ft", function()
 end, { desc = "find files" })
 
 local function get_git_root()
-	local git_dir = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
-	if vim.v.shell_error == 0 then
-		return git_dir
-	else
-		return vim.fn.getcwd()
-	end
+	-- Use Neovim built-in API instead of shell call for better performance
+	local git_root = vim.fs.root(0, ".git")
+	return git_root or vim.fn.getcwd()
 end
 
 vim.keymap.set("n", "<leader>v", function()
