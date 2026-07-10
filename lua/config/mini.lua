@@ -32,8 +32,24 @@ sessions.setup({
 	options = { "buffers", "curdir", "tabpages", "winsize" },
 })
 
+local function encode_path(path)
+	return path:gsub("/", "%%")
+end
+
+local function decode_path(encoded)
+	return encoded:gsub("%%", "/")
+end
+
+local function tail_path(encoded, n)
+	n = n or 3
+	local path = decode_path(encoded)
+	local parts = vim.split(path, "/", { plain = true })
+	local start = math.max(2, #parts - n + 1)
+	return table.concat(parts, "/", start, #parts)
+end
+
 local function session_name()
-	return vim.fn.getcwd():gsub("/", "%%")
+	return encode_path(vim.fn.getcwd())
 end
 
 vim.api.nvim_create_user_command("MiniSessionsWrite", function()
@@ -58,7 +74,7 @@ local function git_session_name()
 		return nil
 	end
 
-	return git_root:gsub("/", "%%")
+	return encode_path(git_root)
 end
 
 vim.api.nvim_create_autocmd("VimLeavePre", {
@@ -77,6 +93,40 @@ vim.api.nvim_create_autocmd("VimLeavePre", {
 local starter = require("mini.starter")
 local starter_opts = { buffer = true, nowait = true }
 
+local function sessions_section(n)
+	n = n or 5
+	return function()
+		if _G.MiniSessions == nil then
+			return { { name = "'mini.sessions' is not set up", action = "", section = "Sessions" } }
+		end
+
+		local items = {}
+		for name, session in pairs(_G.MiniSessions.detected) do
+			if session.type ~= "local" then
+				table.insert(items, {
+					_time = session.modify_time,
+					name = tail_path(name, 5),
+					action = function()
+						_G.MiniSessions.read(name)
+					end,
+					section = "Sessions",
+				})
+			end
+		end
+
+		table.sort(items, function(a, b)
+			return a._time > b._time
+		end)
+
+		local result = {}
+		for i = 1, math.min(n, #items) do
+			items[i]._time = nil
+			table.insert(result, items[i])
+		end
+		return result
+	end
+end
+
 starter.setup({
 	evaluate_single = true,
 	mappings = {
@@ -86,8 +136,7 @@ starter.setup({
 		starter.sections.builtin_actions(),
 		starter.sections.recent_files(10, false),
 		starter.sections.recent_files(10, true),
-		-- Use this if you set up 'mini.sessions'
-		starter.sections.sessions(5, true),
+		sessions_section(5),
 	},
 	content_hooks = {
 		starter.gen_hook.adding_bullet(),
