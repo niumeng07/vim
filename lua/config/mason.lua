@@ -12,7 +12,13 @@ require("mason").setup({
 -- mason lsp
 vim.defer_fn(function()
 	require("mason-lspconfig").setup({
-		automatic_installation = false,
-		ensure_installed = {},
+		automatic_installation = true,
+		ensure_installed = {
+			"gopls",
+			"pyright",
+			"lua_ls",
+			"bashls",
+			"sqlls",
+		},
 	})
 end, 100)
