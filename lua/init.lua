@@ -24,23 +24,26 @@ vim.api.nvim_create_user_command("LspInfo", function()
 	}
 
 	if #clients == 0 then
-		table.insert(lines, "Active clients: none")
+		table.insert(lines, "Active clients: None")
 		if ft == "go" then
 			table.insert(lines, "")
-			table.insert(lines, "Go 提示: 需在含 go.mod 的项目中打开 .go 文件，gopls 才会 attach")
+			table.insert(lines, "Go Tip: gopls only works in projects with a go.mod file.")
+		elseif ft == "swift" then
+			table.insert(lines, "")
+			table.insert(lines, "Swift Tip: gd requires sourcekit-lsp index files.")
+			table.insert(lines, "  - SwiftPM: Run `swift build` in the project root.")
+			table.insert(lines, "  - SwiftUI/Xcode: buildServer.json is required. (Run :SwiftLspSetup)")
 		elseif ft == "" then
 			table.insert(lines, "")
-			table.insert(lines, "提示: 先打开代码文件再查看 LSP 状态")
+			table.insert(lines, "Tip: Please open a source file to view LSP status.")
 		end
 	else
 		table.insert(lines, "Active clients:")
 		for _, client in ipairs(clients) do
-			table.insert(lines, string.format(
-				"  - %s (id=%d, root=%s)",
-				client.name,
-				client.id,
-				client.config.root_dir or "nil"
-			))
+			table.insert(
+				lines,
+				string.format("  - %s (id=%d, root=%s)", client.name, client.id, client.config.root_dir or "nil")
+			)
 		end
 	end
 
@@ -57,6 +60,9 @@ local function lsp_filter_for_buf(bufnr)
 		python = "pyright",
 		c = "clangd",
 		cpp = "clangd",
+		swift = "sourcekit",
+		objc = "sourcekit",
+		objcpp = "sourcekit",
 	}
 	local server = server_by_ft[ft]
 	if not server then
@@ -65,6 +71,34 @@ local function lsp_filter_for_buf(bufnr)
 	return function(client)
 		return client.name == server
 	end
+end
+
+local function swift_no_location_hint(bufnr)
+	local clients = vim.lsp.get_clients({ bufnr = bufnr, name = "sourcekit" })
+	local root = clients[1] and clients[1].config.root_dir
+	if not root then
+		return "No locations found (sourcekit not attached, run :LspInfo for details)"
+	end
+
+	local has_build_server = vim.fn.filereadable(vim.fs.joinpath(root, "buildServer.json")) == 1
+	local has_package = vim.fn.filereadable(vim.fs.joinpath(root, "Package.swift")) == 1
+	local has_xcode = vim.fn.glob(vim.fs.joinpath(root, "*.xcodeproj")) ~= ""
+		or vim.fn.glob(vim.fs.joinpath(root, "*.xcworkspace")) ~= ""
+
+	if has_xcode and not has_build_server then
+		return table.concat({
+			"No locations found",
+			"SwiftUI/Xcode projects need buildServer.json for sourcekit-lsp to index cross-file symbols",
+			"Run :SwiftLspSetup to view setup steps",
+		}, "\n")
+	end
+	if has_package and not has_build_server then
+		return table.concat({
+			"No locations found",
+			"SwiftPM projects: run `swift build` in the project root first",
+		}, "\n")
+	end
+	return "No locations found"
 end
 
 local function jump_to_items(items, offset_encoding)
@@ -109,7 +143,7 @@ local function goto_definition()
 				vim.defer_fn(attempt, 150)
 				return
 			end
-			vim.notify("LSP 未就绪，请稍候再试或执行 :LspInfo", vim.log.levels.WARN)
+			vim.notify("LSP not ready, please try again later or run :LspInfo", vim.log.levels.WARN)
 			return
 		end
 
@@ -127,6 +161,11 @@ local function goto_definition()
 					encoding = client.offset_encoding
 					local locations = vim.islist(res.result) and res.result or { res.result }
 					vim.list_extend(items, vim.lsp.util.locations_to_items(locations, client.offset_encoding))
+				elseif res and res.error then
+					vim.notify(
+						string.format("LSP %s: %s", res.error.code or "", res.error.message or "unknown error"),
+						vim.log.levels.WARN
+					)
 				end
 			end
 
@@ -136,7 +175,8 @@ local function goto_definition()
 					vim.defer_fn(attempt, 300)
 					return
 				end
-				vim.notify("No locations found", vim.log.levels.INFO)
+				local msg = vim.bo[bufnr].filetype == "swift" and swift_no_location_hint(bufnr) or "No locations found"
+				vim.notify(msg, vim.log.levels.INFO)
 				return
 			end
 
@@ -249,7 +289,46 @@ vim.lsp.config("bashls", {
 
 vim.lsp.config("sourcekit", {
 	cmd = { "xcrun", "sourcekit-lsp" },
+	capabilities = vim.tbl_deep_extend("force", capabilities, {
+		workspace = {
+			didChangeWatchedFiles = {
+				dynamicRegistration = true,
+			},
+		},
+		textDocument = {
+			diagnostic = {
+				dynamicRegistration = true,
+				relatedDocumentSupport = true,
+			},
+		},
+	}),
 })
+
+vim.api.nvim_create_user_command("SwiftLspSetup", function()
+	local client = vim.lsp.get_clients({ bufnr = 0, name = "sourcekit" })[1]
+	local root = client and client.config.root_dir or vim.fn.getcwd()
+	local lines = {
+		"Swift / SwiftUI LSP Setup Guide",
+		"",
+		"Current LSP root: " .. root,
+		"",
+		"1. Install xcode-build-server (required for SwiftUI / Xcode projects)",
+		"   brew install xcode-build-server",
+		"",
+		"2. Generate buildServer.json in the project root",
+		"   cd " .. root,
+		"   xcode-build-server config -project YourApp.xcodeproj -scheme YourScheme",
+		"   # Or use .xcworkspace",
+		"   xcode-build-server config -workspace YourApp.xcworkspace -scheme YourScheme",
+		"",
+		"3. Build at least once in Xcode (or run xcodebuild build) to prepare the index",
+		"",
+		"4. Restart Neovim, open a .swift file, then run :LspInfo to confirm sourcekit is attached",
+		"",
+		"SwiftPM projects don't need xcode-build-server; just run swift build in the project root.",
+	}
+	vim.notify(table.concat(lines, "\n"), vim.log.levels.INFO, { title = "Swift LSP Setup" })
+end, { desc = "Show Swift/SwiftUI sourcekit-lsp setup guide" })
 
 vim.lsp.config("lua_ls", {
 	cmd = mason_cmd("lua-language-server", { "lua-language-server" }),
