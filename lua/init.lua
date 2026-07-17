@@ -8,7 +8,14 @@ end
 
 local function mason_cmd(name, fallback)
 	local path = mason_bin(name)
-	return path and { path } or fallback
+	if not path then
+		return fallback
+	end
+	local cmd = { path }
+	for i = 2, #fallback do
+		cmd[#cmd + 1] = fallback[i]
+	end
+	return cmd
 end
 
 vim.api.nvim_create_user_command("LspInfo", function()
