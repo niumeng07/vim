@@ -14,6 +14,7 @@ conform_api.setup({
 		rust = { "rustfmt", lsp_format = "fallback" },
 		javascript = { "prettierd", "prettier", stop_after_first = true },
 		scala = { "scalafmt" },
+		sql = { "sql_formatter" },
 		typescript = { "prettier" },
 		json = { "jq" },
 		sh = { "shfmt" },
